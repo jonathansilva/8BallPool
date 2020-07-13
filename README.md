@@ -22,6 +22,8 @@ If you really want to publish, do not publish with the same package name you are
 
 The first hack for 8 Ball Pool, 100% brazilian
 
+> Adjustments to align https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/layout/main.xml#L8 and https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L179
+
 ### Prints
 
 ![photo_2020-07-12_21-47-15](https://user-images.githubusercontent.com/33843748/87260643-5a229180-c489-11ea-964b-f3a2054a4c96.jpg)
