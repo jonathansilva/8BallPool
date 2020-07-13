@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Faça os ajustes necessários em layout_width e layout_height, para alinhar o layout à mesa -->
+    <RelativeLayout
+        android:id="@+id/board"
+        android:layout_width="540dp"
+        android:layout_height="299dp"
+        android:layout_gravity="center"
+        tools:ignore="UselessParent">
+
+        <app.hack.eightballpool.Normal
+            android:id="@+id/normal"
+            android:layout_width="wrap_content"
+            android:layout_height="243dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginEnd="27dp" />
+
+        <app.hack.eightballpool.Table
+            android:id="@+id/table"
+            android:layout_width="wrap_content"
+            android:layout_height="243dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginEnd="27dp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_normal"
+            android:layout_width="70dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_toEndOf="@+id/btn_close"
+            android:background="@drawable/button_normal"
+            android:text="@string/normal"
+            android:textColor="@color/colorWhite"
+            tools:ignore="ContentDescription" />
+
+        <Button
+            android:id="@+id/btn_table"
+            android:layout_width="65dp"
+            android:layout_height="25dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/btn_normal"
+            android:background="@drawable/button_table"
+            android:text="@string/table"
+            android:textColor="@color/colorWhite"
+            tools:ignore="ContentDescription" />
+
+        <Button
+            android:id="@+id/btn_close"
+            android:layout_width="65dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/button_close"
+            android:text="@string/close"
+            android:textColor="@color/colorWhite"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+</FrameLayout>
