@@ -10,6 +10,8 @@ Se quiser mesmo publicar, não publique com o mesmo nome de pacote que você est
 
 O primeiro hack para 8 Ball Pool, 100% brasileiro
 
+> Ajustes para alinhar https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/layout/main.xml#L8 e https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L179
+
 - **Important**
 
 Make the necessary changes to align the layout on your smartphone screen
