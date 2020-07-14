@@ -117,19 +117,23 @@ public class Normal extends View {
                 xCircle = xonMotion;
                 yCircle = yonMotion;
 
-                if (xCircle <= 0) {
+                // Left
+                if (xCircle < 0) {
                     xCircle = 0;
                 }
 
-                if (yCircle <= 0) {
+                // Top
+                if (yCircle < 0) {
                     yCircle = 0;
                 }
 
-                if (xCircle >= getWidth()) {
+                // Right
+                if (xCircle > getWidth()) {
                     xCircle = getWidth();
                 }
 
-                if (yCircle >= getHeight()) {
+                // Bottom
+                if (yCircle > getHeight()) {
                     yCircle = getHeight();
                 }
 
