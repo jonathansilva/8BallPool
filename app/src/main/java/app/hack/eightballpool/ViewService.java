@@ -36,7 +36,7 @@ public class ViewService extends Service {
     private RelativeLayout board;
     private Normal normal;
     private Table table;
-    private Button btn_table, btn_normal;
+    private Button btn_normal, btn_table;
     private MediaPlayer mediaPlayer;
 
     private float accel, accelCurrent, accelLast;
@@ -60,15 +60,15 @@ public class ViewService extends Service {
         normal.setVisibility(View.GONE);
         table = view.findViewById(R.id.table);
 
-        Button btn_close = view.findViewById(R.id.btn_close);
-        btn_table = view.findViewById(R.id.btn_table);
         btn_normal = view.findViewById(R.id.btn_normal);
+        btn_table = view.findViewById(R.id.btn_table);
+        Button btn_close = view.findViewById(R.id.btn_close);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.touch);
 
-        btn_close.setOnClickListener(close);
         btn_table.setOnClickListener(showTable);
         btn_normal.setOnClickListener(showNormal);
+        btn_close.setOnClickListener(close);
 
         layoutParams();
         sensorManager();
@@ -83,7 +83,7 @@ public class ViewService extends Service {
 
         /* getWidth() / 2f e getHeight() / 2f ( centro do Canvas )
         *
-        * OBS: Faça os ajustes necessários, para que o círculo fique no centro do Canvas em seu smartphone
+        * Faça os ajustes necessários para que o círculo fique no centro do Canvas
         */
         normal.setCenterCanvas(729.0f, 364.5f);
         normal.setCircleRadiusRatio(100);
@@ -97,7 +97,7 @@ public class ViewService extends Service {
 
         /* getWidth() / 2f e getHeight() / 2f ( centro do Canvas )
          *
-         * OBS: Faça os ajustes necessários, para que os círculos fiquem no centro do Canvas em seu smartphone
+         * Faça os ajustes necessários para que os círculos fiquem no centro do Canvas
          */
         table.setCenterCanvasCircleOne(529.0f, 364.5f); // Subtraí 200 do Width
         table.setCenterCanvasCircleTwo(929.0f, 364.5f); // Adicionei 200 no Width
@@ -105,11 +105,13 @@ public class ViewService extends Service {
         table.setRotation(0);
     }
 
-    private View.OnClickListener close = new View.OnClickListener() {
+    private View.OnClickListener showNormal = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             mediaPlayer.start();
-            board.setVisibility(View.GONE);
+            btn_table.setBackgroundResource(R.drawable.button_table);
+            btn_normal.setBackgroundResource(R.drawable.button_normal_clicked);
+            showNormal();
         }
     };
 
@@ -123,13 +125,11 @@ public class ViewService extends Service {
         }
     };
 
-    private View.OnClickListener showNormal = new View.OnClickListener() {
+    private View.OnClickListener close = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             mediaPlayer.start();
-            btn_table.setBackgroundResource(R.drawable.button_table);
-            btn_normal.setBackgroundResource(R.drawable.button_normal_clicked);
-            showNormal();
+            board.setVisibility(View.GONE);
         }
     };
 
@@ -176,7 +176,7 @@ public class ViewService extends Service {
 
         params.screenOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
         params.gravity = Gravity.BOTTOM | Gravity.CENTER;
-        params.verticalMargin = 0.0099f; // Faça o ajuste necessário para alinhar o layout à mesa
+        params.verticalMargin = 0.0099f; // Margin bottom
 
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
         windowManager.addView(view, params);

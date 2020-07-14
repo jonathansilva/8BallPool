@@ -234,10 +234,13 @@ public class Table extends View {
 
         calculateAngle();
 
-        // Se o centro do círculo preto tocar em uma das paredes, desenha a linha de mira
+        // Se o centro do círculo preto tocar no top ou bottom, exibe a linha na vertical
         if (touchedTheWall) {
 
-            // Se o toque foi na parede vertical ( esquerda ou direita ), subtrai 180 graus do ângulo
+            /*
+            * Caso o toque for no lado vertical ( left ou right )
+            * subtrai 180 graus do ângulo para exibir a linha na horizontal
+            */
             if (xCircleTwo == getWidth() || xCircleTwo == 0) {
                 angle -= 180;
             }
