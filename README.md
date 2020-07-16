@@ -1,30 +1,46 @@
 - **Importante**
 
-Faça as alterações necessárias para alinhar o layout à mesa do jogo, na tela do seu smartphone
+No momento, é preciso que você faça as alterações necessárias para alinhar o layout à mesa do jogo ( links abaixo )
 
-Não utilize o mesmo *nome de pacote* ( app.hack.eightballpool ) e não publique na Play Store ou qualquer outro site/fórum, senão, pode correr o risco de ser banido pela Miniclip
+Ainda não há uma solução que faça esse alinhamento automaticamente em qualquer tamanho de tela
 
-Se quiser mesmo publicar, não publique com o mesmo nome de pacote que você está usando
+Não utilize o mesmo *nome de pacote* ( app.hack.eightballpool ) e não publique na Play Store ou qualquer outro site/fórum, senão você pode correr o risco de ser banido pela Miniclip
 
-> Para mostrar as linhas, balance o smartphone
+Se quiser mesmo publicar, publique com outro nome de pacote
+
+> Após instalar e abrir o aplicativo, balance o smartphone para exibir o menu e as linhas
 
 O primeiro hack para 8 Ball Pool, 100% brasileiro
 
-> Ajustes para alinhar https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/layout/main.xml#L8 e https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L179
+https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/layout/main.xml#L8
+
+https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L77
+
+https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L94
+
+https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L179
 
 - **Important**
 
-Make the necessary changes to align the layout on your smartphone screen
+At the moment, you need to make the necessary changes to align the layout to the game table ( links below )
 
-Do not use the same *package name* ( app.hack.eightballpool ) and do not post on the Play Store or any other site/forum, otherwise you could be banned by Miniclip
+There is still no solution that automatically aligns any screen size
 
-If you really want to publish, do not publish with the same package name you are using
+Do not use the same *package name* ( app.hack.eightballpool ) and do not post on the Play Store or any other website/forum, otherwise you may be at risk of being banned by Miniclip
 
-> To show the lines, shake the smartphone
+If you really want to publish, publish with another package name
+
+> After installing and opening the app, shake your smartphone to display the menu and lines
 
 The first hack for 8 Ball Pool, 100% brazilian
 
-> Adjustments to align https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/layout/main.xml#L8 and https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L179
+https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/layout/main.xml#L8
+
+https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L77
+
+https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L94
+
+https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L179
 
 ### Prints
 
