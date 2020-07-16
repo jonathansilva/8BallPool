@@ -82,9 +82,9 @@ public class ViewService extends Service {
         normal.setVisibility(View.VISIBLE);
 
         /* getWidth() / 2f e getHeight() / 2f ( centro do Canvas )
-        *
-        * Faça os ajustes necessários para que o círculo fique no centro do Canvas
-        */
+         *
+         * Faça os ajuste necessário para que o círculo fique no centro do Canvas
+         */
         normal.setCenterCanvas(729.0f, 364.5f);
         normal.setCircleRadiusRatio(100);
 
