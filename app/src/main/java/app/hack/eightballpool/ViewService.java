@@ -60,14 +60,15 @@ public class ViewService extends Service {
         normal.setVisibility(View.GONE);
         table = view.findViewById(R.id.table);
 
+        // Menu
         btn_normal = view.findViewById(R.id.btn_normal);
         btn_table = view.findViewById(R.id.btn_table);
         Button btn_close = view.findViewById(R.id.btn_close);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.touch);
 
-        btn_table.setOnClickListener(showTable);
         btn_normal.setOnClickListener(showNormal);
+        btn_table.setOnClickListener(showTable);
         btn_close.setOnClickListener(close);
 
         layoutParams();
@@ -75,9 +76,6 @@ public class ViewService extends Service {
     }
 
     private void showNormal() {
-        btn_table.setBackgroundResource(R.drawable.button_table);
-        btn_normal.setBackgroundResource(R.drawable.button_normal_clicked);
-
         table.setVisibility(View.GONE);
         normal.setVisibility(View.VISIBLE);
 
@@ -109,8 +107,8 @@ public class ViewService extends Service {
         @Override
         public void onClick(View v) {
             mediaPlayer.start();
-            btn_table.setBackgroundResource(R.drawable.button_table);
             btn_normal.setBackgroundResource(R.drawable.button_normal_clicked);
+            btn_table.setBackgroundResource(R.drawable.button_table);
             showNormal();
         }
     };
@@ -119,8 +117,8 @@ public class ViewService extends Service {
         @Override
         public void onClick(View v) {
             mediaPlayer.start();
-            btn_normal.setBackgroundResource(R.drawable.button_normal);
             btn_table.setBackgroundResource(R.drawable.button_table_clicked);
+            btn_normal.setBackgroundResource(R.drawable.button_normal);
             showTable();
         }
     };
@@ -198,19 +196,15 @@ public class ViewService extends Service {
             if (accel > 8 && accel < 15) {
                 board.setVisibility(View.VISIBLE);
                 board.setAlpha(0.0f);
-                board
-                        .animate()
-                        .setDuration(1000)
-                        .alpha(1.0f)
-                        .setListener(new AnimatorListenerAdapter() {
+                board.animate().setDuration(1000).alpha(1.0f).setListener(new AnimatorListenerAdapter() {
 
-                            @Override
-                            public void onAnimationEnd(Animator animation) {
-                                super.onAnimationEnd(animation);
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
 
-                                board.animate().setListener(null);
-                            }
-                        });
+                        board.animate().setListener(null);
+                    }
+                });
             }
         }
 
@@ -221,12 +215,7 @@ public class ViewService extends Service {
     public void sensorManager() {
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
-        Objects.requireNonNull(sensorManager)
-                .registerListener(
-                        mSensorListener,
-                        sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
-                        SensorManager.SENSOR_DELAY_FASTEST
-                );
+        Objects.requireNonNull(sensorManager).registerListener(mSensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_FASTEST);
 
         accel = 10f;
         accelCurrent = SensorManager.GRAVITY_EARTH;

@@ -8,17 +8,17 @@ Não utilize o mesmo *nome de pacote* ( app.hack.eightballpool ) e não publique
 
 Se quiser mesmo publicar, publique com outro nome de pacote
 
-> Após instalar e abrir o aplicativo, balance o smartphone para exibir o menu e as linhas
+> Após instalar e abrir o aplicativo, balance o smartphone para exibir o menu
 
 O primeiro hack para 8 Ball Pool, 100% brasileiro
 
 https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/layout/main.xml#L8
 
-https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L77
+https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L78
 
-https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L94
+https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L92
 
-https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L179
+https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L177
 
 - **Important**
 
@@ -30,17 +30,17 @@ Do not use the same *package name* ( app.hack.eightballpool ) and do not post on
 
 If you really want to publish, publish with another package name
 
-> After installing and opening the app, shake your smartphone to display the menu and lines
+> After installing and opening the app, shake your smartphone to display the menu
 
 The first hack for 8 Ball Pool, 100% brazilian
 
 https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/layout/main.xml#L8
 
-https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L77
+https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L78
 
-https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L94
+https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L92
 
-https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L179
+https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L177
 
 ### Prints
 
