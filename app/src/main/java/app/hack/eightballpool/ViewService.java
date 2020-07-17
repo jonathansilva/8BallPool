@@ -168,7 +168,7 @@ public class ViewService extends Service {
                 WindowManager.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
-                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, // WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH | WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                 PixelFormat.TRANSLUCENT
         );
 
@@ -215,7 +215,12 @@ public class ViewService extends Service {
     public void sensorManager() {
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
-        Objects.requireNonNull(sensorManager).registerListener(mSensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_FASTEST);
+        Objects.requireNonNull(sensorManager)
+                .registerListener(
+                        mSensorListener,
+                        sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                        SensorManager.SENSOR_DELAY_FASTEST
+                );
 
         accel = 10f;
         accelCurrent = SensorManager.GRAVITY_EARTH;
