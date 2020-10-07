@@ -8,7 +8,8 @@ Não utilize o mesmo *nome de pacote* ( app.hack.eightballpool ) e não publique
 
 Se quiser mesmo publicar, publique com outro nome de pacote
 
-> Após instalar e abrir o aplicativo, balance o smartphone para exibir o menu
+> Após instalar e abrir o aplicativo, o Menu é exibido automaticamente
+> Após clicar em Fechar e quiser exibir o Menu novamente, balance o smartphone
 
 O primeiro hack para 8 Ball Pool, 100% brasileiro
 
@@ -22,7 +23,8 @@ Do not use the same *package name* ( app.hack.eightballpool ) and do not post on
 
 If you really want to publish, publish with another package name
 
-> After installing and opening the app, shake your smartphone to display the menu
+> After installing and opening the application, the Menu is displayed automatically
+> After clicking Close ( Fechar ) and want to display the Menu again, shake your smartphone
 
 The first hack for 8 Ball Pool, 100% brazilian
 
@@ -36,7 +38,7 @@ https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hac
 
 https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L177
 
-### Prints
+### Screenshots
 
 ![photo_2020-07-12_21-47-15](https://user-images.githubusercontent.com/33843748/87260643-5a229180-c489-11ea-964b-f3a2054a4c96.jpg)
 
