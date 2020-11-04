@@ -42,12 +42,18 @@ https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hac
 
 ### Screenshots
 
+> Home
+
 ![photo_2020-07-12_21-47-15](https://user-images.githubusercontent.com/33843748/87260643-5a229180-c489-11ea-964b-f3a2054a4c96.jpg)
 
 ![photo_2020-07-12_21-47-12](https://user-images.githubusercontent.com/33843748/87260662-6dcdf800-c489-11ea-8f79-3b8034de4d48.jpg)
 
 ![photo_2020-07-12_21-47-09](https://user-images.githubusercontent.com/33843748/87260678-77eff680-c489-11ea-8643-1b9127f09a49.jpg)
 
+> Mode: Normal
+
 ![photo_2020-07-12_21-47-06](https://user-images.githubusercontent.com/33843748/87260689-80483180-c489-11ea-9672-f898fca5da85.jpg)
+
+> Mode: Table
 
 ![photo_2020-07-12_21-47-03](https://user-images.githubusercontent.com/33843748/87260699-8a6a3000-c489-11ea-9cc4-d1c9609cd4a4.jpg)
