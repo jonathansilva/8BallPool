@@ -10,7 +10,7 @@ Se quiser mesmo publicar, publique com outro nome de pacote
 
 > Após instalar e abrir o aplicativo, o Menu é exibido automaticamente
 
-> Após clicar em Fechar e quiser exibir o Menu novamente, balance o smartphone
+> Após fechar e quiser exibir o Menu novamente, balance o smartphone
 
 O primeiro hack para 8 Ball Pool, 100% brasileiro
 
@@ -26,7 +26,7 @@ If you really want to publish, publish with another package name
 
 > After installing and opening the application, the Menu is displayed automatically
 
-> After clicking Close ( Fechar ) and want to display the Menu again, shake your smartphone
+> After close and want to display the Menu again, shake your smartphone
 
 The first hack for 8 Ball Pool, 100% brazilian
 
