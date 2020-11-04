@@ -1,34 +1,38 @@
 - **Importante**
 
-No momento, é preciso que você faça as alterações necessárias para alinhar o layout à mesa do jogo ( links abaixo )
+No momento, é preciso que você faça as alterações necessárias para ajustar o layout à mesa do jogo ( links abaixo )
 
-Ainda não implementei uma solução que faça esse alinhamento automaticamente em qualquer tamanho de tela
+Ainda não implementei uma solução que faça esse ajuste automaticamente em qualquer tamanho de tela
 
-Não utilize o mesmo *nome de pacote* ( app.hack.eightballpool ) e não publique na Play Store ou qualquer outro site/fórum, senão você pode correr o risco de ser banido pela Miniclip
+Não utilize o mesmo *nome de pacote* ( app.hack.eightballpool )
 
-Se quiser mesmo publicar, publique com outro nome de pacote
+Crie um *nome de pacote* único para o seu smartphone e não compartilhe com o mesmo *nome de pacote*
+
+É recomendável que você também altere o nome do app
+
+Não publique na Play Store
 
 > Após instalar e abrir o aplicativo, o Menu é exibido automaticamente
 
-> Após fechar e quiser exibir o Menu novamente, balance o smartphone
-
-O primeiro hack para 8 Ball Pool, 100% brasileiro
+> Após você fechar e quiser exibir o Menu novamente, balance o smartphone
 
 - **Important**
 
-At the moment, you need to make the necessary changes to align the layout to the game table ( links below )
+At the moment, you need to make the necessary changes to adjust the layout to the game table ( links below )
 
-I have not yet implemented a solution that automatically aligns any screen size
+I have not yet implemented a solution that automatically adjust to any screen size
 
-Do not use the same *package name* ( app.hack.eightballpool ) and do not post on the Play Store or any other website/forum, otherwise you may be at risk of being banned by Miniclip
+Do not use the same *package name* ( app.hack.eightballpool )
 
-If you really want to publish, publish with another package name
+Create a unique *package name* for your smartphone and don't share it with the same *package name*
+
+It is recommended that you also change the name of the app
+
+Do not post on the Play Store
 
 > After installing and opening the application, the Menu is displayed automatically
 
-> After close and want to display the Menu again, shake your smartphone
-
-The first hack for 8 Ball Pool, 100% brazilian
+> After you close and want to display the Menu again, shake your smartphone
 
 ### Links
 
