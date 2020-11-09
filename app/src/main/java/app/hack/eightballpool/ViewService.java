@@ -79,12 +79,8 @@ public class ViewService extends Service {
         table.setVisibility(View.GONE);
         normal.setVisibility(View.VISIBLE);
 
-        /* getWidth() / 2f e getHeight() / 2f ( centro do Canvas )
-         *
-         * Faça o ajuste necessário para que o círculo fique no centro do Canvas
-         */
-        normal.setCenterCanvas(729.0f, 364.5f);
-        normal.setCircleRadiusRatio(100);
+        // x = getWidth() / 2f e y = getHeight() / 2f ( centro do Canvas )
+        normal.setPositionCircle(729.0f, 364.5f);
 
         normal.setRotation(0);
     }
@@ -93,12 +89,12 @@ public class ViewService extends Service {
         normal.setVisibility(View.GONE);
         table.setVisibility(View.VISIBLE);
 
-        /* getWidth() / 2f e getHeight() / 2f ( centro do Canvas )
-         *
-         * Faça os ajustes necessários para que os círculos fiquem no centro do Canvas
-         */
-        table.setCenterCanvasCircleOne(529.0f, 364.5f); // Subtraí 200 do Width
-        table.setCenterCanvasCircleTwo(929.0f, 364.5f); // Adicionei 200 no Width
+        // x = getWidth() / 2f e y = getHeight() / 2f ( centro do Canvas )
+        table.setPositionCircleOne(529.0f, 364.5f); // Subtraí 200 do Width
+        table.setPositionCircleTwo(929.0f, 364.5f); // Adicionei 200 no Width
+
+        // x = getWidth() - 200 e y = 200
+        table.setPositionControls(1258.0f, 200.0f);
 
         table.setRotation(0);
     }

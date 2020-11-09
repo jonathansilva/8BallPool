@@ -10,18 +10,19 @@ import android.view.MotionEvent;
 import android.view.View;
 
 public class Normal extends View {
-    private Paint lineMiddleTop;
     private Paint lineTopLeft;
     private Paint lineTopRight;
-    private Paint lineMiddleBottom;
     private Paint lineBottomLeft;
     private Paint lineBottomRight;
+    private Paint lineMiddleTop;
+    private Paint lineMiddleBottom;
     private Paint circle;
 
-    float xonTouch, yonTouch, xonMotion, yonMotion;
+    float xOnTouch, yOnTouch;
+    float xOnMotion, yOnMotion;
     float xCircle, yCircle;
-    float radiusCircle;
 
+    int radius = 100;
     int strokeWidth = 6;
     int shadowRadius = 6;
 
@@ -101,40 +102,40 @@ public class Normal extends View {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                xonTouch = event.getX();
-                yonTouch = event.getY();
+                xOnTouch = event.getX();
+                yOnTouch = event.getY();
 
-                trackStatus = xonTouch > (xCircle - radiusCircle)
-                        && xonTouch < (xCircle + radiusCircle)
-                        && yonTouch > (yCircle - radiusCircle)
-                        && yonTouch < (yCircle + radiusCircle);
+                trackStatus = xOnTouch > (xCircle - radius)
+                        && xOnTouch < (xCircle + radius)
+                        && yOnTouch > (yCircle - radius)
+                        && yOnTouch < (yCircle + radius);
 
                 break;
             case MotionEvent.ACTION_MOVE:
-                xonMotion = event.getX();
-                yonMotion = event.getY();
+                xOnMotion = event.getX();
+                yOnMotion = event.getY();
 
-                xCircle = xonMotion;
-                yCircle = yonMotion;
+                xCircle = xOnMotion;
+                yCircle = yOnMotion;
 
-                // Left
-                if (xCircle < 0) {
-                    xCircle = 0;
-                }
-
-                // Top
+                // Wall: Top
                 if (yCircle < 0) {
                     yCircle = 0;
                 }
 
-                // Right
-                if (xCircle > getWidth()) {
-                    xCircle = getWidth();
-                }
-
-                // Bottom
+                // Wall: Bottom
                 if (yCircle > getHeight()) {
                     yCircle = getHeight();
+                }
+
+                // Wall: Left
+                if (xCircle < 0) {
+                    xCircle = 0;
+                }
+
+                // Wall: Right
+                if (xCircle > getWidth()) {
+                    xCircle = getWidth();
                 }
 
                 trackStatus = true;
@@ -152,22 +153,18 @@ public class Normal extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        canvas.drawLine(xCircle, yCircle - radiusCircle, getWidth() / 2f, 3, lineMiddleTop);
-        canvas.drawLine(xCircle, yCircle + radiusCircle, getWidth() / 2f, getHeight() - 3, lineMiddleBottom);
-        canvas.drawLine(xCircle - (70 / 100f * radiusCircle), yCircle - (70 / 100f * radiusCircle), 10, 10, lineTopLeft);
-        canvas.drawLine(xCircle + (70 / 100f * radiusCircle), yCircle - (70 / 100f * radiusCircle), getWidth() - 10, 10, lineTopRight);
-        canvas.drawLine(xCircle - (70 / 100f * radiusCircle), yCircle + (70 / 100f * radiusCircle), 10, getHeight() - 10, lineBottomLeft);
-        canvas.drawLine(xCircle + (70 / 100f * radiusCircle), yCircle + (70 / 100f * radiusCircle), getWidth() - 10, getHeight() - 10, lineBottomRight);
+        canvas.drawLine(xCircle, yCircle - radius, getWidth() / 2f, 3, lineMiddleTop);
+        canvas.drawLine(xCircle, yCircle + radius, getWidth() / 2f, getHeight() - 3, lineMiddleBottom);
+        canvas.drawLine(xCircle - (70 / 100f * radius), yCircle - (70 / 100f * radius), 10, 10, lineTopLeft);
+        canvas.drawLine(xCircle + (70 / 100f * radius), yCircle - (70 / 100f * radius), getWidth() - 10, 10, lineTopRight);
+        canvas.drawLine(xCircle - (70 / 100f * radius), yCircle + (70 / 100f * radius), 10, getHeight() - 10, lineBottomLeft);
+        canvas.drawLine(xCircle + (70 / 100f * radius), yCircle + (70 / 100f * radius), getWidth() - 10, getHeight() - 10, lineBottomRight);
 
-        canvas.drawCircle(xCircle, yCircle, radiusCircle, circle);
+        canvas.drawCircle(xCircle, yCircle, radius, circle);
     }
 
-    public void setCenterCanvas(float x, float y) {
+    public void setPositionCircle(float x, float y) {
         xCircle = x;
         yCircle = y;
-    }
-
-    public void setCircleRadiusRatio(float ratio){
-        radiusCircle = ratio;
     }
 }
