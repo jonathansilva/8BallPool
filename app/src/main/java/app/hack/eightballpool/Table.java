@@ -15,21 +15,36 @@ public class Table extends View {
     private Paint reflectLine;
     private Paint circleOne;
     private Paint circleOneMiddle;
+    private Paint circleOneMiddleBorder;
     private Paint circleAuxTop;
     private Paint circleAuxBottom;
     private Paint circleTwo;
+    private Paint circleAuxControls;
+    private Paint circleAuxControlTop;
+    private Paint circleAuxControlBottom;
+    private Paint circleAuxControlLeft;
+    private Paint circleAuxControlRight;
 
-    float xonTouch, yonTouch, xonMotion, yonMotion;
-    float xCircleOne, yCircleOne, xCircleTwo, yCircleTwo;
-    float xCircleAuxTop, yCircleAuxTop, xCircleAuxBottom, yCircleAuxBottom;
+    float xOnTouch, yOnTouch;
+    float xOnMotion, yOnMotion;
+    float xCircleOne, yCircleOne;
+    float xCircleTwo, yCircleTwo;
+    float xCircleAuxTop, yCircleAuxTop;
+    float xCircleAuxBottom, yCircleAuxBottom;
+    float xCircleAuxControls, yCircleAuxControls;
+    float xCircleAuxControlTop, yCircleAuxControlTop;
+    float xCircleAuxControlBottom, yCircleAuxControlBottom;
+    float xCircleAuxControlLeft, yCircleAuxControlLeft;
+    float xCircleAuxControlRight, yCircleAuxControlRight;
     float angle;
 
     int strokeWidth = 6;
+    int circle;
     int radiusCircleOne = 100;
-    int radiusCircleOneMiddle = 12;
     int radiusCircleTwo = 100;
     int radiusCircleAux = 50;
-    int circleNo;
+    int radiusCircleAuxControls = 60;
+    int radiusCircleAuxControl = 50;
 
     boolean trackStatus, touchedTheWall;
 
@@ -56,9 +71,15 @@ public class Table extends View {
         reflectLine = new Paint();
         circleOne = new Paint();
         circleOneMiddle = new Paint();
+        circleOneMiddleBorder = new Paint();
         circleTwo = new Paint();
         circleAuxTop = new Paint();
         circleAuxBottom = new Paint();
+        circleAuxControls = new Paint();
+        circleAuxControlTop = new Paint();
+        circleAuxControlBottom = new Paint();
+        circleAuxControlLeft = new Paint();
+        circleAuxControlRight = new Paint();
 
         line.setStrokeWidth(4.5f);
         line.setStrokeCap(Paint.Cap.ROUND);
@@ -80,6 +101,10 @@ public class Table extends View {
         circleOneMiddle.setColor(getContext().getColor(R.color.colorRed));
         circleOneMiddle.setAntiAlias(true);
 
+        circleOneMiddleBorder.setStyle(Paint.Style.FILL);
+        circleOneMiddleBorder.setColor(getContext().getColor(R.color.colorWhite));
+        circleOneMiddleBorder.setAntiAlias(true);
+
         circleTwo.setStyle(Paint.Style.STROKE);
         circleTwo.setStrokeWidth(10);
         circleTwo.setColor(Color.BLACK);
@@ -92,6 +117,26 @@ public class Table extends View {
         circleAuxBottom.setStyle(Paint.Style.FILL);
         circleAuxBottom.setColor(getContext().getColor(R.color.colorAlphaWhite));
         circleAuxBottom.setAntiAlias(true);
+
+        circleAuxControls.setStyle(Paint.Style.FILL);
+        circleAuxControls.setColor(getContext().getColor(R.color.colorAlphaWhite));
+        circleAuxControls.setAntiAlias(true);
+
+        circleAuxControlTop.setStyle(Paint.Style.FILL);
+        circleAuxControlTop.setColor(getContext().getColor(R.color.colorWhite));
+        circleAuxControlTop.setAntiAlias(true);
+
+        circleAuxControlBottom.setStyle(Paint.Style.FILL);
+        circleAuxControlBottom.setColor(getContext().getColor(R.color.colorWhite));
+        circleAuxControlBottom.setAntiAlias(true);
+
+        circleAuxControlLeft.setStyle(Paint.Style.FILL);
+        circleAuxControlLeft.setColor(getContext().getColor(R.color.colorWhite));
+        circleAuxControlLeft.setAntiAlias(true);
+
+        circleAuxControlRight.setStyle(Paint.Style.FILL);
+        circleAuxControlRight.setColor(getContext().getColor(R.color.colorWhite));
+        circleAuxControlRight.setAntiAlias(true);
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -99,120 +144,208 @@ public class Table extends View {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                xonTouch = event.getX();
-                yonTouch = event.getY();
+                xOnTouch = event.getX();
+                yOnTouch = event.getY();
 
                 trackStatus = false;
 
-                if (xonTouch > (xCircleOne - radiusCircleOne)
-                        && xonTouch < (xCircleOne + radiusCircleOne)
-                        && yonTouch > (yCircleOne - radiusCircleOne)
-                        && yonTouch < (yCircleOne + radiusCircleOne)
+                if (xOnTouch > (xCircleOne - radiusCircleOne)
+                        && xOnTouch < (xCircleOne + radiusCircleOne)
+                        && yOnTouch > (yCircleOne - radiusCircleOne)
+                        && yOnTouch < (yCircleOne + radiusCircleOne)
                 ) {
                     trackStatus = true;
-                    circleNo = 1;
+                    circle = 1;
                 }
 
-                if (xonTouch > (xCircleTwo - radiusCircleTwo)
-                        && xonTouch < (xCircleTwo + radiusCircleTwo)
-                        && yonTouch > (yCircleTwo - radiusCircleTwo)
-                        && yonTouch < (yCircleTwo + radiusCircleTwo)
+                if (xOnTouch > (xCircleTwo - radiusCircleTwo)
+                        && xOnTouch < (xCircleTwo + radiusCircleTwo)
+                        && yOnTouch > (yCircleTwo - radiusCircleTwo)
+                        && yOnTouch < (yCircleTwo + radiusCircleTwo)
                 ) {
                     trackStatus = true;
-                    circleNo = 2;
+                    circle = 2;
                 }
 
-                if (xonTouch > (xCircleAuxTop - radiusCircleAux)
-                        && xonTouch < (xCircleAuxTop + radiusCircleAux)
-                        && yonTouch > (yCircleAuxTop - radiusCircleAux)
-                        && yonTouch < (yCircleAuxTop + radiusCircleAux)
+                if (xOnTouch > (xCircleAuxTop - radiusCircleAux)
+                        && xOnTouch < (xCircleAuxTop + radiusCircleAux)
+                        && yOnTouch > (yCircleAuxTop - radiusCircleAux)
+                        && yOnTouch < (yCircleAuxTop + radiusCircleAux)
                 ) {
                     trackStatus = true;
-                    circleNo = 3;
+                    circle = 3;
                 }
 
-                if (xonTouch > (xCircleAuxBottom - radiusCircleAux)
-                        && xonTouch < (xCircleAuxBottom + radiusCircleAux)
-                        && yonTouch > (yCircleAuxBottom - radiusCircleAux)
-                        && yonTouch < (yCircleAuxBottom + radiusCircleAux)
+                if (xOnTouch > (xCircleAuxBottom - radiusCircleAux)
+                        && xOnTouch < (xCircleAuxBottom + radiusCircleAux)
+                        && yOnTouch > (yCircleAuxBottom - radiusCircleAux)
+                        && yOnTouch < (yCircleAuxBottom + radiusCircleAux)
                 ) {
                     trackStatus = true;
-                    circleNo = 4;
+                    circle = 4;
                 }
 
+                if (xOnTouch > (xCircleAuxControls - radiusCircleAuxControls)
+                        && xOnTouch < (xCircleAuxControls + radiusCircleAuxControls)
+                        && yOnTouch > (yCircleAuxControls - radiusCircleAuxControls)
+                        && yOnTouch < (yCircleAuxControls + radiusCircleAuxControls)
+                ) {
+                    trackStatus = true;
+                    circle = 5;
+                }
+
+                // Control: Top
+                if (xOnTouch > (xCircleAuxControlTop - radiusCircleAuxControl)
+                        && xOnTouch < (xCircleAuxControlTop + radiusCircleAuxControl)
+                        && yOnTouch > (yCircleAuxControlTop - radiusCircleAuxControl)
+                        && yOnTouch < (yCircleAuxControlTop + radiusCircleAuxControl)
+                ) {
+                    yCircleOne = yCircleOne - 1.0f;
+
+                    xCircleAuxTop = xCircleOne + 110;
+                    yCircleAuxTop = yCircleOne - 140;
+
+                    xCircleAuxBottom = xCircleOne - 110;
+                    yCircleAuxBottom = yCircleOne + 140;
+                }
+
+                // Control: Bottom
+                if (xOnTouch > (xCircleAuxControlBottom - radiusCircleAuxControl)
+                        && xOnTouch < (xCircleAuxControlBottom + radiusCircleAuxControl)
+                        && yOnTouch > (yCircleAuxControlBottom - radiusCircleAuxControl)
+                        && yOnTouch < (yCircleAuxControlBottom + radiusCircleAuxControl)
+                ) {
+                    yCircleOne = yCircleOne + 1.0f;
+
+                    xCircleAuxTop = xCircleOne + 110;
+                    yCircleAuxTop = yCircleOne - 140;
+
+                    xCircleAuxBottom = xCircleOne - 110;
+                    yCircleAuxBottom = yCircleOne + 140;
+                }
+
+                // Control: Left
+                if (xOnTouch > (xCircleAuxControlLeft - radiusCircleAuxControl)
+                        && xOnTouch < (xCircleAuxControlLeft + radiusCircleAuxControl)
+                        && yOnTouch > (yCircleAuxControlLeft - radiusCircleAuxControl)
+                        && yOnTouch < (yCircleAuxControlLeft + radiusCircleAuxControl)
+                ) {
+                    xCircleOne = xCircleOne - 1.0f;
+
+                    xCircleAuxTop = xCircleOne + 110;
+                    yCircleAuxTop = yCircleOne - 140;
+
+                    xCircleAuxBottom = xCircleOne - 110;
+                    yCircleAuxBottom = yCircleOne + 140;
+                }
+
+                // Control: Right
+                if (xOnTouch > (xCircleAuxControlRight - radiusCircleAuxControl)
+                        && xOnTouch < (xCircleAuxControlRight + radiusCircleAuxControl)
+                        && yOnTouch > (yCircleAuxControlRight - radiusCircleAuxControl)
+                        && yOnTouch < (yCircleAuxControlRight + radiusCircleAuxControl)
+                ) {
+                    xCircleOne = xCircleOne + 1.0f;
+
+                    xCircleAuxTop = xCircleOne + 110;
+                    yCircleAuxTop = yCircleOne - 140;
+
+                    xCircleAuxBottom = xCircleOne - 110;
+                    yCircleAuxBottom = yCircleOne + 140;
+                }
+
+                invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
-                xonMotion = event.getX();
-                yonMotion = event.getY();
+                xOnMotion = event.getX();
+                yOnMotion = event.getY();
 
-                if (circleNo == 1) {
-                    xCircleOne = xonMotion;
-                    yCircleOne = yonMotion;
+                if (circle == 1) {
+                    xCircleOne = xOnMotion;
+                    yCircleOne = yOnMotion;
 
-                    xCircleAuxTop = xCircleOne + 140;
-                    yCircleAuxTop = yCircleOne - 110;
+                    xCircleAuxTop = xCircleOne + 110;
+                    yCircleAuxTop = yCircleOne - 140;
 
-                    xCircleAuxBottom = xCircleOne - 140;
-                    yCircleAuxBottom = yCircleOne + 110;
+                    xCircleAuxBottom = xCircleOne - 110;
+                    yCircleAuxBottom = yCircleOne + 140;
 
                     checkCircleOneCollision();
                 }
 
-                if (circleNo == 2) {
-                    xCircleTwo = xonMotion;
-                    yCircleTwo = yonMotion;
+                if (circle == 2) {
+                    xCircleTwo = xOnMotion;
+                    yCircleTwo = yOnMotion;
 
                     touchedTheWall = false;
 
-                    // Left
-                    if (xonMotion < 0) {
-                        xCircleTwo = 0;
-                        touchedTheWall = true;
-                    }
-
-                    // Top
-                    if (yonMotion < 0) {
+                    // Wall: Top
+                    if (yOnMotion < 0) {
                         yCircleTwo = 0;
                         touchedTheWall = true;
                     }
 
-                    // Right
-                    if (xonMotion > getWidth()) {
-                        xCircleTwo = getWidth();
-                        touchedTheWall = true;
-                    }
-
-                    // Bottom
-                    if (yonMotion > getHeight()) {
+                    // Wall: Bottom
+                    if (yOnMotion > getHeight()) {
                         yCircleTwo = getHeight();
                         touchedTheWall = true;
                     }
+
+                    // Wall: Left
+                    if (xOnMotion < 0) {
+                        xCircleTwo = 0;
+                        touchedTheWall = true;
+                    }
+
+                    // Wall: Right
+                    if (xOnMotion > getWidth()) {
+                        xCircleTwo = getWidth();
+                        touchedTheWall = true;
+                    }
                 }
 
-                if (circleNo == 3) {
-                    xCircleAuxTop = xonMotion;
-                    yCircleAuxTop = yonMotion;
+                if (circle == 3) {
+                    xCircleAuxTop = xOnMotion;
+                    yCircleAuxTop = yOnMotion;
 
-                    xCircleOne = xCircleAuxTop - 140;
-                    yCircleOne = yCircleAuxTop + 110;
+                    xCircleOne = xCircleAuxTop - 110;
+                    yCircleOne = yCircleAuxTop + 140;
 
-                    xCircleAuxBottom = xCircleOne - 140;
-                    yCircleAuxBottom = yCircleOne + 110;
+                    xCircleAuxBottom = xCircleOne - 110;
+                    yCircleAuxBottom = yCircleOne + 140;
 
                     checkCircleOneCollision();
                 }
 
-                if (circleNo == 4) {
-                    xCircleAuxBottom = xonMotion;
-                    yCircleAuxBottom = yonMotion;
+                if (circle == 4) {
+                    xCircleAuxBottom = xOnMotion;
+                    yCircleAuxBottom = yOnMotion;
 
-                    xCircleOne = xCircleAuxBottom + 140;
-                    yCircleOne = yCircleAuxBottom - 110;
+                    xCircleOne = xCircleAuxBottom + 110;
+                    yCircleOne = yCircleAuxBottom - 140;
 
-                    xCircleAuxTop = xCircleOne + 140;
-                    yCircleAuxTop = yCircleOne - 110;
+                    xCircleAuxTop = xCircleOne + 110;
+                    yCircleAuxTop = yCircleOne - 140;
 
                     checkCircleOneCollision();
+                }
+
+                if (circle == 5) {
+                    yCircleAuxControls = yOnMotion;
+
+                    xCircleAuxControlTop = xCircleAuxControls;
+                    yCircleAuxControlTop = yCircleAuxControls - 140;
+
+                    xCircleAuxControlBottom = xCircleAuxControls;
+                    yCircleAuxControlBottom = yCircleAuxControls + 140;
+
+                    xCircleAuxControlLeft = xCircleAuxControls - 140;
+                    yCircleAuxControlLeft = yCircleAuxControls;
+
+                    xCircleAuxControlRight = xCircleAuxControls + 140;
+                    yCircleAuxControlRight = yCircleAuxControls;
+
+                    checkCircleAuxControlsCollision();
                 }
 
                 trackStatus = true;
@@ -223,7 +356,7 @@ public class Table extends View {
                 break;
         }
 
-       return trackStatus;
+        return trackStatus;
     }
 
     @Override
@@ -234,13 +367,10 @@ public class Table extends View {
 
         calculateAngle();
 
-        // Se o centro do círculo preto tocar no top ou bottom, exibe a linha na vertical
+        // Walls: Top or Bottom
         if (touchedTheWall) {
 
-            /*
-            * Caso o toque for no lado vertical ( left ou right )
-            * subtrai 180 graus do ângulo para exibir a linha na horizontal
-            */
+            // Walls: Left or Right
             if (xCircleTwo == getWidth() || xCircleTwo == 0) {
                 angle -= 180;
             }
@@ -249,35 +379,77 @@ public class Table extends View {
         }
 
         canvas.drawCircle(xCircleOne, yCircleOne, radiusCircleOne, circleOne);
-        canvas.drawCircle(xCircleOne, yCircleOne, radiusCircleOneMiddle, circleOneMiddle);
+        canvas.drawCircle(xCircleOne, yCircleOne, 14, circleOneMiddleBorder);
+        canvas.drawCircle(xCircleOne, yCircleOne, 12, circleOneMiddle);
         canvas.drawCircle(xCircleTwo, yCircleTwo, radiusCircleTwo, circleTwo);
         canvas.drawCircle(xCircleAuxTop, yCircleAuxTop, radiusCircleAux, circleAuxTop);
         canvas.drawCircle(xCircleAuxBottom, yCircleAuxBottom, radiusCircleAux, circleAuxBottom);
+        canvas.drawCircle(xCircleAuxControls, yCircleAuxControls, radiusCircleAuxControls, circleAuxControls);
+        canvas.drawCircle(xCircleAuxControlTop, yCircleAuxControlTop, radiusCircleAuxControl, circleAuxControlTop);
+        canvas.drawCircle(xCircleAuxControlBottom, yCircleAuxControlBottom, radiusCircleAuxControl, circleAuxControlBottom);
+        canvas.drawCircle(xCircleAuxControlLeft, yCircleAuxControlLeft, radiusCircleAuxControl, circleAuxControlLeft);
+        canvas.drawCircle(xCircleAuxControlRight, yCircleAuxControlRight, radiusCircleAuxControl, circleAuxControlRight);
     }
 
     private void checkCircleOneCollision() {
+        float controlWidth = 90 + (radiusCircleAuxControl * 4) + (radiusCircleAuxControls * 2);
+
+        if (xCircleOne >= (getWidth() - controlWidth)) {
+            xCircleAuxControls = 200;
+            xCircleAuxControlTop = xCircleAuxControls;
+            xCircleAuxControlBottom = xCircleAuxControls;
+            xCircleAuxControlLeft = xCircleAuxControls - 140;
+            xCircleAuxControlRight = xCircleAuxControls + 140;
+        }
+
+        if (xCircleOne <= controlWidth) {
+            xCircleAuxControls = getWidth() - 200;
+            xCircleAuxControlTop = xCircleAuxControls;
+            xCircleAuxControlBottom = xCircleAuxControls;
+            xCircleAuxControlLeft = xCircleAuxControls - 140;
+            xCircleAuxControlRight = xCircleAuxControls + 140;
+        }
+
         if (xCircleOne < 0) {
             xCircleOne = 0;
-            xCircleAuxTop = xCircleOne + 140;
-            yCircleAuxTop = yCircleOne - 110;
+            xCircleAuxTop = xCircleOne + 110;
+            yCircleAuxTop = yCircleOne - 140;
         }
 
         if (yCircleOne < 0) {
             yCircleOne = 0;
-            xCircleAuxBottom = xCircleOne - 140;
-            yCircleAuxBottom = yCircleOne + 110;
+            xCircleAuxBottom = xCircleOne - 110;
+            yCircleAuxBottom = yCircleOne + 140;
         }
 
         if (xCircleOne > getWidth()) {
             xCircleOne = getWidth();
-            xCircleAuxBottom = xCircleOne - 140;
-            yCircleAuxBottom = yCircleOne + 110;
+            xCircleAuxBottom = xCircleOne - 110;
+            yCircleAuxBottom = yCircleOne + 140;
         }
 
         if (yCircleOne > getHeight()) {
             yCircleOne = getHeight();
-            xCircleAuxTop = xCircleOne + 140;
-            yCircleAuxTop = yCircleOne - 110;
+            xCircleAuxTop = xCircleOne + 110;
+            yCircleAuxTop = yCircleOne - 140;
+        }
+    }
+
+    private void checkCircleAuxControlsCollision() {
+        if ((yCircleAuxControlTop - radiusCircleAuxControl) < 0) {
+            yCircleAuxControls = 200;
+            yCircleAuxControlTop = yCircleAuxControls - 140;
+            yCircleAuxControlBottom = yCircleAuxControls + 140;
+            yCircleAuxControlLeft = yCircleAuxControls;
+            yCircleAuxControlRight = yCircleAuxControls;
+        }
+
+        if ((yCircleAuxControlBottom + radiusCircleAuxControl) > getHeight()) {
+            yCircleAuxControls = getHeight() - 200;
+            yCircleAuxControlTop = yCircleAuxControls - 140;
+            yCircleAuxControlBottom = yCircleAuxControls + 140;
+            yCircleAuxControlLeft = yCircleAuxControls;
+            yCircleAuxControlRight = yCircleAuxControls;
         }
     }
 
@@ -299,7 +471,7 @@ public class Table extends View {
         }
     }
 
-    public void setCenterCanvasCircleOne(float x, float y) {
+    public void setPositionCircleOne(float x, float y) {
         xCircleOne = x;
         yCircleOne = y;
 
@@ -310,8 +482,25 @@ public class Table extends View {
         yCircleAuxBottom = y + 140;
     }
 
-    public void setCenterCanvasCircleTwo(float x, float y) {
-        xCircleTwo = (int) x;
-        yCircleTwo = (int) y;
+    public void setPositionCircleTwo(float x, float y) {
+        xCircleTwo = x;
+        yCircleTwo = y;
+    }
+
+    public void setPositionControls(float x, float y) {
+        xCircleAuxControls = x;
+        yCircleAuxControls = y;
+
+        xCircleAuxControlTop = xCircleAuxControls;
+        yCircleAuxControlTop = yCircleAuxControls - 140;
+
+        xCircleAuxControlBottom = xCircleAuxControls;
+        yCircleAuxControlBottom = yCircleAuxControls + 140;
+
+        xCircleAuxControlLeft = xCircleAuxControls - 140;
+        yCircleAuxControlLeft = yCircleAuxControls;
+
+        xCircleAuxControlRight = xCircleAuxControls + 140;
+        yCircleAuxControlRight = yCircleAuxControls;
     }
 }

@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Faça os ajustes necessários em layout_width e layout_height -->
     <RelativeLayout
         android:id="@+id/board"
         android:layout_width="540dp"
