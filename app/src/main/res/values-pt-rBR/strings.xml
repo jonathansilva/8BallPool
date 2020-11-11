@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">8</string>
+    <string name="normal">NORMAL</string>
+    <string name="table">TABELA</string>
+    <string name="close">FECHAR</string>
+</resources>
