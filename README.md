@@ -1,10 +1,8 @@
 - **Importante**
 
-No momento, é preciso que você faça as alterações necessárias para ajustar o layout à mesa do jogo
+É preciso que você faça as alterações necessárias para ajustar o layout à mesa do jogo
 
-Ainda não implementei uma solução que faça esse ajuste automaticamente em qualquer tamanho de tela
-
-> Anti-ban, apenas se você seguir estes passos
+> Anti-ban, apenas se você seguir estes passos:
 
 Não utilize o mesmo *nome de pacote* ( app.hack.eightballpool )
 
@@ -20,11 +18,9 @@ Não publique na Play Store
 
 - **Important**
 
-At the moment, you need to make the necessary changes to adjust the layout to the game table
+You need to make the necessary changes to adjust the layout to the game table
 
-I have not yet implemented a solution that automatically adjust to any screen size
-
-> Anti-ban, only if you follow these steps
+> Anti-ban, only if you follow these steps:
 
 Do not use the same *package name* ( app.hack.eightballpool )
 
@@ -40,13 +36,7 @@ Do not post on the Play Store
 
 ### Links
 
-https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/layout/main.xml#L7
-
-https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L78
-
-https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L88
-
-https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/java/app/hack/eightballpool/ViewService.java#L173
+https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/values/dimens.xml
 
 https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/values/strings.xml#L2
 
@@ -67,9 +57,5 @@ https://github.com/jonathansilva/8BallPool/blob/master/settings.gradle#L2
 ![photo_2020-07-12_21-47-06](https://user-images.githubusercontent.com/33843748/87260689-80483180-c489-11ea-9672-f898fca5da85.jpg)
 
 > Mode: Table
-
-![photo_2020-07-12_21-47-03](https://user-images.githubusercontent.com/33843748/87260699-8a6a3000-c489-11ea-9cc4-d1c9609cd4a4.jpg)
-
-> Mode: Table ( update )
 
 ![photo_2020-11-09_14-48-52](https://user-images.githubusercontent.com/33843748/98577678-0ee38880-229b-11eb-935f-416626b061b8.jpg)
