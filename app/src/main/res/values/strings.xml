@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">8</string>
     <string name="normal">NORMAL</string>
-    <string name="table">TABLE</string>
+    <string name="trickshot">TRICKSHOT</string>
     <string name="close">CLOSE</string>
 </resources>

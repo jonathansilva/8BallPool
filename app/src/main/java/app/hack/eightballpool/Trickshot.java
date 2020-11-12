@@ -10,7 +10,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-public class Table extends View {
+public class Trickshot extends View {
     private Paint line;
     private Paint reflectLine;
     private Paint circleOne;
@@ -48,19 +48,19 @@ public class Table extends View {
 
     boolean trackStatus, touchedTheWall;
 
-    public Table(Context context) {
+    public Trickshot(Context context) {
         super(context);
 
         init();
     }
 
-    public Table(Context context, AttributeSet attrs) {
+    public Trickshot(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         init();
     }
 
-    public Table(Context context, AttributeSet attrs, int defStyleAttr) {
+    public Trickshot(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         init();

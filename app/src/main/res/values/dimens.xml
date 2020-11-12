@@ -16,7 +16,7 @@
 
         Find the dimensions in MainActivity
 
-        Add the android:background="@color/colorRed" in layout ( RelativeLayout ) to help the adjusts
+        Add the android:background="@color/colorAlphaWhite" in layout ( RelativeLayout ) to help the adjusts
     -->
 
     <!-- Board -->
@@ -30,8 +30,8 @@
     <dimen name="canvasMarginTop" tools:ignore="PxUsage">82px</dimen> <!-- 9.1415830546265% of boardHeight -->
 
     <!-- Buttons -->
-    <dimen name="buttonWidth" tools:ignore="PxUsage">210px</dimen>
+    <dimen name="buttonWidth" tools:ignore="PxUsage">260px</dimen>
     <dimen name="buttonHeight" tools:ignore="PxUsage">75px</dimen>
-    <dimen name="buttonNormalMarginStart" tools:ignore="PxUsage">240px</dimen>
+    <dimen name="buttonNormalMarginStart" tools:ignore="PxUsage">185px</dimen>
     <dimen name="buttonCloseMarginEnd" tools:ignore="PxUsage">170px</dimen>
 </resources>

@@ -35,8 +35,8 @@ public class ViewService extends Service {
     private View view;
     private RelativeLayout board;
     private Normal normal;
-    private Table table;
-    private Button btn_normal, btn_table;
+    private Trickshot trickshot;
+    private Button btn_normal, btn_trickshot;
     private MediaPlayer mediaPlayer;
 
     private float accel, accelCurrent, accelLast;
@@ -57,16 +57,16 @@ public class ViewService extends Service {
 
         board = view.findViewById(R.id.board);
         normal = view.findViewById(R.id.normal);
-        table = view.findViewById(R.id.table);
+        trickshot = view.findViewById(R.id.trickshot);
 
         btn_normal = view.findViewById(R.id.btn_normal);
-        btn_table = view.findViewById(R.id.btn_table);
+        btn_trickshot = view.findViewById(R.id.btn_trickshot);
         Button btn_close = view.findViewById(R.id.btn_close);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.touch);
 
         btn_normal.setOnClickListener(showNormal);
-        btn_table.setOnClickListener(showTable);
+        btn_trickshot.setOnClickListener(showTrickshot);
         btn_close.setOnClickListener(close);
 
         layoutParams();
@@ -74,7 +74,7 @@ public class ViewService extends Service {
     }
 
     private void showNormal() {
-        table.setVisibility(View.GONE);
+        trickshot.setVisibility(View.GONE);
         normal.setVisibility(View.VISIBLE);
 
         float widthCanvas = (int) getResources().getDimension(R.dimen.canvasWidth);
@@ -85,19 +85,19 @@ public class ViewService extends Service {
         normal.setRotation(0);
     }
 
-    private void showTable() {
+    private void showTrickshot() {
         normal.setVisibility(View.GONE);
-        table.setVisibility(View.VISIBLE);
+        trickshot.setVisibility(View.VISIBLE);
 
         float widthCanvas = (int) getResources().getDimension(R.dimen.canvasWidth);
         float heightCanvas = (int) getResources().getDimension(R.dimen.canvasHeight);
 
-        table.setPositionCircleOne((widthCanvas / 2) - 200, heightCanvas / 2);
-        table.setPositionCircleTwo(200 + (widthCanvas / 2), heightCanvas / 2);
+        trickshot.setPositionCircleOne((widthCanvas / 2) - 200, heightCanvas / 2);
+        trickshot.setPositionCircleTwo(200 + (widthCanvas / 2), heightCanvas / 2);
 
-        table.setPositionControls(widthCanvas - 200, 200.0f);
+        trickshot.setPositionControls(widthCanvas - 200, 200.0f);
 
-        table.setRotation(0);
+        trickshot.setRotation(0);
     }
 
     private View.OnClickListener showNormal = new View.OnClickListener() {
@@ -105,18 +105,18 @@ public class ViewService extends Service {
         public void onClick(View v) {
             mediaPlayer.start();
             btn_normal.setBackgroundResource(R.drawable.button_normal_clicked);
-            btn_table.setBackgroundResource(R.drawable.button_table);
+            btn_trickshot.setBackgroundResource(R.drawable.button_trickshot);
             showNormal();
         }
     };
 
-    private View.OnClickListener showTable = new View.OnClickListener() {
+    private View.OnClickListener showTrickshot = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             mediaPlayer.start();
-            btn_table.setBackgroundResource(R.drawable.button_table_clicked);
+            btn_trickshot.setBackgroundResource(R.drawable.button_trickshot_clicked);
             btn_normal.setBackgroundResource(R.drawable.button_normal);
-            showTable();
+            showTrickshot();
         }
     };
 
