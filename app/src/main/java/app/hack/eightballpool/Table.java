@@ -279,25 +279,25 @@ public class Table extends View {
 
                     touchedTheWall = false;
 
-                    // Wall: Top
+                    // Top
                     if (yOnMotion < 0) {
                         yCircleTwo = 0;
                         touchedTheWall = true;
                     }
 
-                    // Wall: Bottom
+                    // Bottom
                     if (yOnMotion > getHeight()) {
                         yCircleTwo = getHeight();
                         touchedTheWall = true;
                     }
 
-                    // Wall: Left
+                    // Left
                     if (xOnMotion < 0) {
                         xCircleTwo = 0;
                         touchedTheWall = true;
                     }
 
-                    // Wall: Right
+                    // Right
                     if (xOnMotion > getWidth()) {
                         xCircleTwo = getWidth();
                         touchedTheWall = true;
@@ -367,10 +367,10 @@ public class Table extends View {
 
         calculateAngle();
 
-        // Walls: Top or Bottom
+        // Top or Bottom
         if (touchedTheWall) {
 
-            // Walls: Left or Right
+            // Left or Right
             if (xCircleTwo == getWidth() || xCircleTwo == 0) {
                 angle -= 180;
             }
