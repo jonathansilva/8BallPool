@@ -19,8 +19,8 @@
             android:layout_centerHorizontal="true"
             android:visibility="gone" />
 
-        <app.hack.eightballpool.Table
-            android:id="@+id/table"
+        <app.hack.eightballpool.Trickshot
+            android:id="@+id/trickshot"
             android:layout_width="@dimen/canvasWidth"
             android:layout_height="@dimen/canvasHeight"
             android:layout_marginTop="@dimen/canvasMarginTop"
@@ -41,13 +41,13 @@
             tools:ignore="ContentDescription" />
 
         <Button
-            android:id="@+id/btn_table"
+            android:id="@+id/btn_trickshot"
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:layout_alignParentBottom="true"
             android:layout_toEndOf="@+id/btn_normal"
-            android:background="@drawable/button_table"
-            android:text="@string/table"
+            android:background="@drawable/button_trickshot"
+            android:text="@string/trickshot"
             android:textColor="@color/colorWhite"
             tools:ignore="ContentDescription" />
 

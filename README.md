@@ -1,6 +1,8 @@
 - **Importante**
 
-É preciso que você faça as alterações necessárias para ajustar o layout à mesa do jogo
+*Não me responsabilizo pelo uso ilícito deste hack*
+
+É preciso que você faça algumas alterações para ajustar o layout à mesa do jogo
 
 > Anti-ban, apenas se você seguir estes passos:
 
@@ -12,13 +14,13 @@ Crie um *nome de pacote* único para o seu celular e não compartilhe com o mesm
 
 Não publique na Play Store
 
-> Após instalar e abrir o aplicativo, o Menu é exibido automaticamente
-
 > Após você fechar e quiser exibir o Menu novamente, balance o celular
 
 - **Important**
 
-You need to make the necessary changes to adjust the layout to the game table
+*I am not responsible for the illegal use of this hack*
+
+You need to make some changes to adjust the layout to the game table
 
 > Anti-ban, only if you follow these steps:
 
@@ -29,8 +31,6 @@ Create a unique *package name* for your smartphone and don't share it with the s
 It is recommended that you also change the name of the app
 
 Do not post on the Play Store
-
-> After installing and opening the application, the Menu is displayed automatically
 
 > After you close and want to display the Menu again, shake your smartphone
 
@@ -44,18 +44,14 @@ https://github.com/jonathansilva/8BallPool/blob/master/settings.gradle#L2
 
 ### Screenshots
 
-> Home
+> Normal
 
-![photo_2020-07-12_21-47-15](https://user-images.githubusercontent.com/33843748/87260643-5a229180-c489-11ea-964b-f3a2054a4c96.jpg)
+![Screenshot_20201112-181204](https://user-images.githubusercontent.com/33843748/98998412-dd75f180-2514-11eb-8a3b-1a93d822d01a.png)
 
-![photo_2020-07-12_21-47-12](https://user-images.githubusercontent.com/33843748/87260662-6dcdf800-c489-11ea-8f79-3b8034de4d48.jpg)
+![Screenshot_20201112-175715](https://user-images.githubusercontent.com/33843748/98998449-e666c300-2514-11eb-9b5f-dcf300065650.png)
 
-![photo_2020-07-12_21-47-09](https://user-images.githubusercontent.com/33843748/87260678-77eff680-c489-11ea-8643-1b9127f09a49.jpg)
+> Trickshot
 
-> Mode: Normal
+![Screenshot_20201112-175443](https://user-images.githubusercontent.com/33843748/98998464-ee266780-2514-11eb-8880-e9b16854459b.png)
 
-![photo_2020-07-12_21-47-06](https://user-images.githubusercontent.com/33843748/87260689-80483180-c489-11ea-9672-f898fca5da85.jpg)
-
-> Mode: Table
-
-![photo_2020-11-09_14-48-52](https://user-images.githubusercontent.com/33843748/98577678-0ee38880-229b-11eb-935f-416626b061b8.jpg)
+![Screenshot_20201112-180023](https://user-images.githubusercontent.com/33843748/98998488-f7afcf80-2514-11eb-86fd-c8105c3d0494.png)
