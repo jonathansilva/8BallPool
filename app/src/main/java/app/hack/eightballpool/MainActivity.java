@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.DisplayMetrics;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +24,16 @@ public class MainActivity extends AppCompatActivity {
         } else {
             init();
         }
+
+        // Dimensions of device
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        int deviceWidth = metrics.widthPixels;
+        int deviceHeight = metrics.heightPixels;
+
+        System.out.println("DEBUG - Device Width: " + deviceWidth);
+        System.out.println("DEBUG - Device Height: " + deviceHeight);
     }
 
     public void init() {

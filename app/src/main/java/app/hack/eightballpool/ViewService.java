@@ -57,10 +57,8 @@ public class ViewService extends Service {
 
         board = view.findViewById(R.id.board);
         normal = view.findViewById(R.id.normal);
-        normal.setVisibility(View.GONE);
         table = view.findViewById(R.id.table);
 
-        // Menu
         btn_normal = view.findViewById(R.id.btn_normal);
         btn_table = view.findViewById(R.id.btn_table);
         Button btn_close = view.findViewById(R.id.btn_close);
@@ -79,8 +77,10 @@ public class ViewService extends Service {
         table.setVisibility(View.GONE);
         normal.setVisibility(View.VISIBLE);
 
-        // x = getWidth() / 2f e y = getHeight() / 2f ( centro do Canvas )
-        normal.setPositionCircle(729.0f, 364.5f);
+        float widthCanvas = (int) getResources().getDimension(R.dimen.canvasWidth);
+        float heightCanvas = (int) getResources().getDimension(R.dimen.canvasHeight);
+
+        normal.setPositionCircle(widthCanvas / 2, heightCanvas / 2);
 
         normal.setRotation(0);
     }
@@ -89,12 +89,13 @@ public class ViewService extends Service {
         normal.setVisibility(View.GONE);
         table.setVisibility(View.VISIBLE);
 
-        // x = getWidth() / 2f e y = getHeight() / 2f ( centro do Canvas )
-        table.setPositionCircleOne(529.0f, 364.5f); // Subtraí 200 do Width
-        table.setPositionCircleTwo(929.0f, 364.5f); // Adicionei 200 no Width
+        float widthCanvas = (int) getResources().getDimension(R.dimen.canvasWidth);
+        float heightCanvas = (int) getResources().getDimension(R.dimen.canvasHeight);
 
-        // x = getWidth() - 200 e y = 200
-        table.setPositionControls(1258.0f, 200.0f);
+        table.setPositionCircleOne((widthCanvas / 2) - 200, heightCanvas / 2);
+        table.setPositionCircleTwo(200 + (widthCanvas / 2), heightCanvas / 2);
+
+        table.setPositionControls(widthCanvas - 200, 200.0f);
 
         table.setRotation(0);
     }
@@ -160,6 +161,8 @@ public class ViewService extends Service {
     }
 
     private void layoutParams() {
+        float boardMarginBottom = getResources().getDimension(R.dimen.boardMarginBottom);
+
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
                 WindowManager.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.WRAP_CONTENT,
@@ -170,7 +173,7 @@ public class ViewService extends Service {
 
         params.screenOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
         params.gravity = Gravity.BOTTOM | Gravity.CENTER;
-        params.verticalMargin = 0.0099f; // Margin bottom
+        params.verticalMargin = boardMarginBottom;
 
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
         windowManager.addView(view, params);
