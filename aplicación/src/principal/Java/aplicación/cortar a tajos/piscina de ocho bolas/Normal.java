@@ -1,4 +1,5 @@
-package app.hack.eightballpool;
+package app.fer.8
+ballpool;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
