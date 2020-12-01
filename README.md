@@ -57,6 +57,7 @@ https://github.com/jonathansilva/8BallPool/blob/master/settings.gradle#L2
 ![Screenshot_20201112-180023](https://user-images.githubusercontent.com/33843748/98998488-f7afcf80-2514-11eb-86fd-c8105c3d0494.png)
 
 > 9 Ball
+##### Apenas um guia. A vitória em uma tacada não funciona 100%
 ##### Just a guide. One shot win does not work 100%
 
 ![screenshot-nineball-one](https://user-images.githubusercontent.com/33843748/100782264-ee66a400-33ea-11eb-97a9-b986373829f2.jpg)
