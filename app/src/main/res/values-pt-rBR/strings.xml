@@ -3,5 +3,7 @@
     <string name="app_name">8</string>
     <string name="normal">NORMAL</string>
     <string name="trickshot">TABELA</string>
-    <string name="close">FECHAR</string>
+    <string name="nineBall">9 Ball</string>
+    <string name="hide">FECHAR</string>
+    <string name="close">Encerrar</string>
 </resources>
