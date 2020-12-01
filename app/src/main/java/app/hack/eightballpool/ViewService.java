@@ -36,7 +36,8 @@ public class ViewService extends Service {
     private RelativeLayout board;
     private Normal normal;
     private Trickshot trickshot;
-    private Button btn_normal, btn_trickshot;
+    private NineBall nineBall;
+    private Button btn_normal, btn_trickshot, btn_nineBall;
     private MediaPlayer mediaPlayer;
 
     private float accel, accelCurrent, accelLast;
@@ -58,16 +59,19 @@ public class ViewService extends Service {
         board = view.findViewById(R.id.board);
         normal = view.findViewById(R.id.normal);
         trickshot = view.findViewById(R.id.trickshot);
+        nineBall = view.findViewById(R.id.nineBall);
 
         btn_normal = view.findViewById(R.id.btn_normal);
         btn_trickshot = view.findViewById(R.id.btn_trickshot);
-        Button btn_close = view.findViewById(R.id.btn_close);
+        btn_nineBall = view.findViewById(R.id.btn_nineBall);
+        Button btn_hide = view.findViewById(R.id.btn_hide);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.touch);
 
         btn_normal.setOnClickListener(showNormal);
         btn_trickshot.setOnClickListener(showTrickshot);
-        btn_close.setOnClickListener(close);
+        btn_nineBall.setOnClickListener(showNineBall);
+        btn_hide.setOnClickListener(hide);
 
         layoutParams();
         sensorManager();
@@ -75,52 +79,90 @@ public class ViewService extends Service {
 
     private void showNormal() {
         trickshot.setVisibility(View.GONE);
+        nineBall.setVisibility(View.GONE);
         normal.setVisibility(View.VISIBLE);
 
         float widthCanvas = (int) getResources().getDimension(R.dimen.canvasWidth);
         float heightCanvas = (int) getResources().getDimension(R.dimen.canvasHeight);
 
-        normal.setPositionCircle(widthCanvas / 2, heightCanvas / 2);
+        normal.setPositionCircle((widthCanvas / 2f), (heightCanvas / 2f));
 
         normal.setRotation(0);
     }
 
     private void showTrickshot() {
         normal.setVisibility(View.GONE);
+        nineBall.setVisibility(View.GONE);
         trickshot.setVisibility(View.VISIBLE);
 
         float widthCanvas = (int) getResources().getDimension(R.dimen.canvasWidth);
         float heightCanvas = (int) getResources().getDimension(R.dimen.canvasHeight);
 
-        trickshot.setPositionCircleOne((widthCanvas / 2) - 200, heightCanvas / 2);
-        trickshot.setPositionCircleTwo(200 + (widthCanvas / 2), heightCanvas / 2);
+        trickshot.setPositionCircleOne((widthCanvas / 2f) - 200, (heightCanvas / 2f));
+        trickshot.setPositionCircleTwo((widthCanvas / 2f) + 200, (heightCanvas / 2f));
 
-        trickshot.setPositionControls(widthCanvas - 200, 200.0f);
+        trickshot.setPositionControls(widthCanvas - 200, 200);
 
         trickshot.setRotation(0);
     }
 
-    private View.OnClickListener showNormal = new View.OnClickListener() {
+    private void showNineBall() {
+        normal.setVisibility(View.GONE);
+        trickshot.setVisibility(View.GONE);
+        nineBall.setVisibility(View.VISIBLE);
+
+        float widthCanvas = (int) getResources().getDimension(R.dimen.canvasWidth);
+        float heightCanvas = (int) getResources().getDimension(R.dimen.canvasHeight);
+
+        // Start line
+        float left = widthCanvas - 327;
+        float top = heightCanvas - 300;
+
+        // End line
+        float right = widthCanvas - 290;
+        float bottom = heightCanvas - 282.5f;
+
+        nineBall.setPositionCircle((widthCanvas / 2f) - 254, (heightCanvas / 2f) - 136.5f);
+
+        nineBall.setPositionLine(left, top, right, bottom);
+
+        nineBall.setRotation(0);
+    }
+
+    private final View.OnClickListener showNormal = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             mediaPlayer.start();
             btn_normal.setBackgroundResource(R.drawable.button_normal_clicked);
             btn_trickshot.setBackgroundResource(R.drawable.button_trickshot);
+            btn_nineBall.setBackgroundResource(R.drawable.button_nineball);
             showNormal();
         }
     };
 
-    private View.OnClickListener showTrickshot = new View.OnClickListener() {
+    private final View.OnClickListener showTrickshot = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             mediaPlayer.start();
             btn_trickshot.setBackgroundResource(R.drawable.button_trickshot_clicked);
             btn_normal.setBackgroundResource(R.drawable.button_normal);
+            btn_nineBall.setBackgroundResource(R.drawable.button_nineball);
             showTrickshot();
         }
     };
 
-    private View.OnClickListener close = new View.OnClickListener() {
+    private final View.OnClickListener showNineBall = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            mediaPlayer.start();
+            btn_normal.setBackgroundResource(R.drawable.button_normal);
+            btn_trickshot.setBackgroundResource(R.drawable.button_trickshot);
+            btn_nineBall.setBackgroundResource(R.drawable.button_nineball_clicked);
+            showNineBall();
+        }
+    };
+
+    private final View.OnClickListener hide = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             mediaPlayer.start();
@@ -145,7 +187,7 @@ public class ViewService extends Service {
             Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
                     .setSmallIcon(R.drawable.ic_android)
                     .setContentIntent(pendingIntent)
-                    .addAction(0, "ENCERRAR", stopPendingIntent)
+                    .addAction(0, getString(R.string.close), stopPendingIntent)
                     .build();
 
             startForeground(1, notification);
