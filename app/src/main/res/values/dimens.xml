@@ -33,5 +33,6 @@
     <dimen name="buttonWidth" tools:ignore="PxUsage">260px</dimen>
     <dimen name="buttonHeight" tools:ignore="PxUsage">75px</dimen>
     <dimen name="buttonNormalMarginStart" tools:ignore="PxUsage">185px</dimen>
+    <dimen name="buttonNineBallMarginEnd" tools:ignore="PxUsage">30px</dimen>
     <dimen name="buttonCloseMarginEnd" tools:ignore="PxUsage">170px</dimen>
 </resources>

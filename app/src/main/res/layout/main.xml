@@ -27,6 +27,14 @@
             android:layout_centerHorizontal="true"
             android:visibility="gone" />
 
+        <app.hack.eightballpool.NineBall
+            android:id="@+id/nineBall"
+            android:layout_width="@dimen/canvasWidth"
+            android:layout_height="@dimen/canvasHeight"
+            android:layout_marginTop="@dimen/canvasMarginTop"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone" />
+
         <Button
             android:id="@+id/btn_normal"
             android:layout_width="@dimen/buttonWidth"
@@ -34,7 +42,7 @@
             android:layout_marginStart="@dimen/buttonNormalMarginStart"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_toEndOf="@+id/btn_close"
+            android:layout_toEndOf="@+id/btn_hide"
             android:background="@drawable/button_normal"
             android:text="@string/normal"
             android:textColor="@color/colorWhite"
@@ -52,14 +60,26 @@
             tools:ignore="ContentDescription" />
 
         <Button
-            android:id="@+id/btn_close"
+            android:id="@+id/btn_nineBall"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:layout_marginEnd="@dimen/buttonNineBallMarginEnd"
+            android:layout_alignParentBottom="true"
+            android:layout_toStartOf="@+id/btn_hide"
+            android:background="@drawable/button_nineball"
+            android:text="@string/nineBall"
+            android:textColor="@color/colorWhite"
+            tools:ignore="ContentDescription" />
+
+        <Button
+            android:id="@+id/btn_hide"
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:layout_marginEnd="@dimen/buttonCloseMarginEnd"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:background="@drawable/button_close"
-            android:text="@string/close"
+            android:text="@string/hide"
             android:textColor="@color/colorWhite"
             tools:ignore="ContentDescription" />
 
