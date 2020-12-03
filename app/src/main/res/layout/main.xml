@@ -78,7 +78,7 @@
             android:layout_marginEnd="@dimen/buttonCloseMarginEnd"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:background="@drawable/button_close"
+            android:background="@drawable/button_hide"
             android:text="@string/hide"
             android:textColor="@color/colorWhite"
             tools:ignore="ContentDescription" />
