@@ -6,13 +6,15 @@
 
 > Anti-ban, apenas se você seguir estes passos:
 
-Não utilize o mesmo *nome de pacote* ( app.hack.eightballpool )
+- 1 - Não utilize o mesmo *nome de pacote* ( app.hack.eightballpool )
 
-Crie um *nome de pacote* único para o seu celular e não compartilhe usando o mesmo nome
+- 2 - Crie um *nome de pacote* único para o seu celular e não compartilhe usando o mesmo nome
+
+- 3 - Não publique na Play Store
 
 É recomendável que você também altere o nome do aplicativo
 
-Não publique na Play Store
+*Atenção:* Não teste o hack em seu celular sem seguir os passos acima
 
 > Após você fechar e quiser exibir o Menu novamente, balance o celular
 
@@ -24,13 +26,15 @@ You need to make some changes to adjust the layout to the game table
 
 > Anti-ban, only if you follow these steps:
 
-Do not use the same *package name* ( app.hack.eightballpool )
+- 1 - Do not use the same *package name* ( app.hack.eightballpool )
 
-Create a unique *package name* for your smartphone and don't share using the same name
+- 2 - Create a unique *package name* for your smartphone and don't share using the same name
+
+- 3 - Do not post on the Play Store
 
 It is recommended that you also change the name of the app
 
-Do not post on the Play Store
+*Attention:* Do not test the hack on your smartphone without following the above steps
 
 > After you close and want to display the Menu again, shake your smartphone
 
@@ -38,7 +42,7 @@ Do not post on the Play Store
 
 https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/values/dimens.xml
 
-https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/values/strings.xml#L2
+https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/values/strings.xml#L3
 
 https://github.com/jonathansilva/8BallPool/blob/master/settings.gradle#L2
 
