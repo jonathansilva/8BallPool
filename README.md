@@ -6,11 +6,11 @@
 
 > Anti-ban, apenas se você seguir estes passos:
 
-- 1 - Não utilize o mesmo *nome de pacote* ( app.hack.eightballpool )
+- Não utilize o mesmo *nome de pacote* ( app.hack.eightballpool )
 
-- 2 - Crie um *nome de pacote* único para o seu celular e não compartilhe usando o mesmo nome
+- Crie um *nome de pacote* único para o seu celular e não compartilhe usando o mesmo nome
 
-- 3 - Não publique na Play Store
+- Não publique na Play Store
 
 É recomendável que você também altere o nome do aplicativo
 
@@ -26,11 +26,11 @@ You need to make some changes to adjust the layout to the game table
 
 > Anti-ban, only if you follow these steps:
 
-- 1 - Do not use the same *package name* ( app.hack.eightballpool )
+- Do not use the same *package name* ( app.hack.eightballpool )
 
-- 2 - Create a unique *package name* for your smartphone and don't share using the same name
+- Create a unique *package name* for your smartphone and don't share using the same name
 
-- 3 - Do not post on the Play Store
+- Do not post on the Play Store
 
 It is recommended that you also change the name of the app
 
