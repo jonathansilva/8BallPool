@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!--
-        Tested in Xiaomi Mi A1
+        Device: Xiaomi Mi A1
+        Android version: 9
+        Screen density: 3
 
         Use the Landscape mode
         In Landscape mode, the values X and Y are inverted
@@ -17,6 +19,8 @@
         Find the dimensions in MainActivity
 
         Add the android:background="@color/colorAlphaWhite" in layout ( RelativeLayout ) to help the adjusts
+
+        You may need to make adjustments to the buttons
     -->
 
     <!-- Board -->
