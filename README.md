@@ -46,6 +46,20 @@ https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/values/s
 
 https://github.com/jonathansilva/8BallPool/blob/master/settings.gradle#L2
 
+### Videos
+
+> Normal
+
+https://www.youtube.com/watch?v=pH-uqXHBreI
+
+> Trickshot
+
+https://www.youtube.com/watch?v=mnTPQZCr1y0
+
+> 9 Ball
+
+https://www.youtube.com/watch?v=1m9RLHiNUOI
+
 ### Screenshots
 
 > Normal
