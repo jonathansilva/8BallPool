@@ -9,9 +9,11 @@ import android.view.View;
 
 public class NineBall extends View {
     private Paint line;
-    private Paint circle;
+    private Paint circleOne;
+    private Paint circleTwo;
 
-    float xCircle, yCircle;
+    float xCircleOne, yCircleOne;
+    float xCircleTwo, yCircleTwo;
     float xStartLine, yStartLine;
     float xEndLine, yEndLine;
 
@@ -35,7 +37,8 @@ public class NineBall extends View {
 
     private void init() {
         line = new Paint();
-        circle = new Paint();
+        circleOne = new Paint();
+        circleTwo = new Paint();
 
         line.setStrokeWidth(4.5f);
         line.setStrokeCap(Paint.Cap.ROUND);
@@ -43,10 +46,16 @@ public class NineBall extends View {
         line.setShadowLayer(6, 0, 0, Color.BLACK);
         line.setAntiAlias(true);
 
-        circle.setStyle(Paint.Style.STROKE);
-        circle.setStrokeWidth(13);
-        circle.setColor(getContext().getColor(R.color.colorBlack));
-        circle.setAntiAlias(true);
+        circleOne.setStyle(Paint.Style.STROKE);
+        circleOne.setStrokeWidth(4.5f);
+        circleOne.setColor(Color.WHITE);
+        circleOne.setShadowLayer(6, 0, 0, Color.BLACK);
+        circleOne.setAntiAlias(true);
+
+        circleTwo.setStyle(Paint.Style.STROKE);
+        circleTwo.setStrokeWidth(13);
+        circleTwo.setColor(getContext().getColor(R.color.colorBlack));
+        circleTwo.setAntiAlias(true);
     }
 
     @Override
@@ -55,12 +64,18 @@ public class NineBall extends View {
 
         canvas.drawLine(xStartLine, yStartLine, xEndLine, yEndLine, line);
 
-        canvas.drawCircle(xCircle, yCircle, 41, circle);
+        canvas.drawCircle(xCircleOne, yCircleOne, 21, circleOne);
+        canvas.drawCircle(xCircleTwo, yCircleTwo, 41, circleTwo);
     }
 
-    public void setPositionCircle(float x, float y) {
-        xCircle = x;
-        yCircle = y;
+    public void setPositionCircleOne(float x, float y) {
+        xCircleOne = x;
+        yCircleOne = y;
+    }
+
+    public void setPositionCircleTwo(float x, float y) {
+        xCircleTwo = x;
+        yCircleTwo = y;
     }
 
     public void setPositionLine(float xStart, float yStart, float xEnd, float yEnd) {

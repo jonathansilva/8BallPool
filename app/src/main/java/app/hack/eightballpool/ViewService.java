@@ -122,7 +122,8 @@ public class ViewService extends Service {
         float right = widthCanvas - 290;
         float bottom = heightCanvas - 282.5f;
 
-        nineBall.setPositionCircle((widthCanvas / 2f) - 254, (heightCanvas / 2f) - 136.5f);
+        nineBall.setPositionCircleOne((widthCanvas / 2f) + 345.5f, (heightCanvas / 2f) + 39f);
+        nineBall.setPositionCircleTwo((widthCanvas / 2f) - 254, (heightCanvas / 2f) - 136.5f);
 
         nineBall.setPositionLine(left, top, right, bottom);
 
