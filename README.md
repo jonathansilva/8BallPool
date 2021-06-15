@@ -2,7 +2,7 @@
 
 *Não me responsabilizo pelo uso deste hack*
 
-É preciso que você faça algumas alterações para ajustar o layout à mesa do jogo
+É preciso que você faça alterações no arquivo *dimens.xml* para ajustar o layout à mesa do jogo
 
 > Anti-ban, apenas se você seguir estes passos:
 
@@ -22,7 +22,7 @@
 
 *I am not responsible for the use of this hack*
 
-You need to make some changes to adjust the layout to the game table
+You need to make changes to the *dimens.xml* file to fit the layout to the game table
 
 > Anti-ban, only if you follow these steps:
 
@@ -38,13 +38,9 @@ It is recommended that you also change the name of the app
 
 > After you close and want to display the Menu again, shake your smartphone
 
-### Links
+### Dimens.xml
 
 https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/values/dimens.xml
-
-https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/values/strings.xml#L3
-
-https://github.com/jonathansilva/8BallPool/blob/master/settings.gradle#L2
 
 ### Videos
 
