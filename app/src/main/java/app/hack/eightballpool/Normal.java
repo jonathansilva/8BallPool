@@ -16,6 +16,7 @@ public class Normal extends View {
     private Paint lineBottomRight;
     private Paint lineMiddleTop;
     private Paint lineMiddleBottom;
+    private Paint shadow;
     private Paint circle;
 
     float xOnTouch, yOnTouch;
@@ -23,8 +24,8 @@ public class Normal extends View {
     float xCircle, yCircle;
 
     int radius = 100;
-    int strokeWidth = 6;
-    int shadowRadius = 6;
+    int strokeShadowWidth = 42;
+    int strokeLineWidth = 6;
 
     boolean trackStatus;
 
@@ -53,43 +54,44 @@ public class Normal extends View {
         lineMiddleBottom = new Paint();
         lineBottomLeft = new Paint();
         lineBottomRight = new Paint();
+        shadow = new Paint();
         circle = new Paint();
 
-        lineMiddleTop.setStrokeWidth(strokeWidth);
+        lineMiddleTop.setStrokeWidth(strokeLineWidth);
         lineMiddleTop.setStrokeCap(Paint.Cap.ROUND);
         lineMiddleTop.setColor(Color.WHITE);
-        lineMiddleTop.setShadowLayer(shadowRadius, 0, 0, Color.BLACK);
         lineMiddleTop.setAntiAlias(true);
 
-        lineTopLeft.setStrokeWidth(strokeWidth);
+        lineTopLeft.setStrokeWidth(strokeLineWidth);
         lineTopLeft.setStrokeCap(Paint.Cap.ROUND);
         lineTopLeft.setColor(Color.WHITE);
-        lineTopLeft.setShadowLayer(shadowRadius, 0, 0, Color.BLACK);
         lineTopLeft.setAntiAlias(true);
 
-        lineTopRight.setStrokeWidth(strokeWidth);
+        lineTopRight.setStrokeWidth(strokeLineWidth);
         lineTopRight.setStrokeCap(Paint.Cap.ROUND);
         lineTopRight.setColor(Color.WHITE);
-        lineTopRight.setShadowLayer(shadowRadius, 0, 0, Color.BLACK);
         lineTopRight.setAntiAlias(true);
 
-        lineMiddleBottom.setStrokeWidth(strokeWidth);
+        lineMiddleBottom.setStrokeWidth(strokeLineWidth);
         lineMiddleBottom.setStrokeCap(Paint.Cap.ROUND);
         lineMiddleBottom.setColor(Color.WHITE);
-        lineMiddleBottom.setShadowLayer(shadowRadius, 0, 0, Color.BLACK);
         lineMiddleBottom.setAntiAlias(true);
 
-        lineBottomLeft.setStrokeWidth(strokeWidth);
+        lineBottomLeft.setStrokeWidth(strokeLineWidth);
         lineBottomLeft.setStrokeCap(Paint.Cap.ROUND);
         lineBottomLeft.setColor(Color.WHITE);
-        lineBottomLeft.setShadowLayer(shadowRadius, 0, 0, Color.BLACK);
         lineBottomLeft.setAntiAlias(true);
 
-        lineBottomRight.setStrokeWidth(strokeWidth);
+        lineBottomRight.setStrokeWidth(strokeLineWidth);
         lineBottomRight.setStrokeCap(Paint.Cap.ROUND);
         lineBottomRight.setColor(Color.WHITE);
-        lineBottomRight.setShadowLayer(shadowRadius, 0, 0, Color.BLACK);
         lineBottomRight.setAntiAlias(true);
+
+        shadow.setStrokeWidth(strokeShadowWidth);
+        shadow.setStrokeCap(Paint.Cap.ROUND);
+        shadow.setColor(Color.WHITE);
+        shadow.setAntiAlias(true);
+        shadow.setAlpha(100);
 
         circle.setStyle(Paint.Style.STROKE);
         circle.setStrokeWidth(10);
@@ -153,11 +155,22 @@ public class Normal extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        canvas.drawLine(xCircle, yCircle - radius, getWidth() / 2f, 3, shadow);
         canvas.drawLine(xCircle, yCircle - radius, getWidth() / 2f, 3, lineMiddleTop);
+
+        canvas.drawLine(xCircle, yCircle + radius, getWidth() / 2f, getHeight() - 3, shadow);
         canvas.drawLine(xCircle, yCircle + radius, getWidth() / 2f, getHeight() - 3, lineMiddleBottom);
+
+        canvas.drawLine(xCircle - (70 / 100f * radius), yCircle - (70 / 100f * radius), 10, 10, shadow);
         canvas.drawLine(xCircle - (70 / 100f * radius), yCircle - (70 / 100f * radius), 10, 10, lineTopLeft);
+
+        canvas.drawLine(xCircle + (70 / 100f * radius), yCircle - (70 / 100f * radius), getWidth() - 10, 10, shadow);
         canvas.drawLine(xCircle + (70 / 100f * radius), yCircle - (70 / 100f * radius), getWidth() - 10, 10, lineTopRight);
+
+        canvas.drawLine(xCircle - (70 / 100f * radius), yCircle + (70 / 100f * radius), 10, getHeight() - 10, shadow);
         canvas.drawLine(xCircle - (70 / 100f * radius), yCircle + (70 / 100f * radius), 10, getHeight() - 10, lineBottomLeft);
+
+        canvas.drawLine(xCircle + (70 / 100f * radius), yCircle + (70 / 100f * radius), getWidth() - 10, getHeight() - 10, shadow);
         canvas.drawLine(xCircle + (70 / 100f * radius), yCircle + (70 / 100f * radius), getWidth() - 10, getHeight() - 10, lineBottomRight);
 
         canvas.drawCircle(xCircle, yCircle, radius, circle);

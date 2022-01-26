@@ -54,6 +54,10 @@ https://www.youtube.com/playlist?list=PL1Z6DvZsu0GdBTJmiutGIktcVpQwFvaA0
 
 ![Screenshot_20201112-175715](https://user-images.githubusercontent.com/33843748/98998449-e666c300-2514-11eb-9b5f-dcf300065650.png)
 
+#### Update ( 26/01/2022 )
+
+![photo_2022-01-26_12-48-59](https://user-images.githubusercontent.com/33843748/151197094-71007b9b-bcf0-431c-ad01-5595201b2c20.jpg)
+
 > Simple Trickshot
 
 ![Screenshot_20201112-175443](https://user-images.githubusercontent.com/33843748/98998464-ee266780-2514-11eb-8880-e9b16854459b.png)
@@ -61,8 +65,8 @@ https://www.youtube.com/playlist?list=PL1Z6DvZsu0GdBTJmiutGIktcVpQwFvaA0
 ![Screenshot_20201112-180023](https://user-images.githubusercontent.com/33843748/98998488-f7afcf80-2514-11eb-86fd-c8105c3d0494.png)
 
 > 9 Ball
-##### Apenas um guia. A vitória na primeira tacada não funciona 100%
-##### Just a guide. Victory on the first shot does not work 100%
+##### Apenas um guia
+##### Just a guide
 
 ![screenshot-nineball-one](https://user-images.githubusercontent.com/33843748/100782264-ee66a400-33ea-11eb-97a9-b986373829f2.jpg)
 
