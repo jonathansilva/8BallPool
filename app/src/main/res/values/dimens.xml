@@ -1,27 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!--
-        My device: Xiaomi Mi A1
-        My android version: 9
-
-        Use the Landscape mode
-        In Landscape mode, the values X and Y are inverted
-
-        Portrait:
-        Device Width: X => 1080
-        Device Height: Y => 1920
-
-        Landscape:
-        Device Width: X => 1920
-        Device Height: Y => 1080
-
-        Find the dimensions of your device in MainActivity ( DEBUG )
-
-        Add the android:background="@color/colorAlphaWhite" in layout ( RelativeLayout ) to help the adjusts
-
-        You may need to make adjustments to the buttons
-    -->
-
     <!-- Board -->
     <dimen name="boardWidth" tools:ignore="PxUsage">1620px</dimen> <!-- 84.375% of X -->
     <dimen name="boardHeight" tools:ignore="PxUsage">897px</dimen> <!-- 83.055555555556% of Y -->
