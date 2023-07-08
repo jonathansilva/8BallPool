@@ -18,19 +18,17 @@
         Find the dimensions of your device in MainActivity ( DEBUG )
 
         Add the android:background="@color/colorAlphaWhite" in layout ( RelativeLayout ) to help the adjusts
-
-        You may need to make adjustments to the buttons
     -->
 
     <!-- Board -->
-    <dimen name="boardWidth" tools:ignore="PxUsage">1620px</dimen> <!-- 84.375% of X -->
-    <dimen name="boardHeight" tools:ignore="PxUsage">897px</dimen> <!-- 83.055555555556% of Y -->
+    <dimen name="boardWidth" tools:ignore="PxUsage">1620px</dimen>
+    <dimen name="boardHeight" tools:ignore="PxUsage">897px</dimen>
     <dimen name="boardMarginBottom" tools:ignore="PxUsage">0.0099px</dimen>
 
     <!-- Canvas -->
-    <dimen name="canvasWidth" tools:ignore="PxUsage">1458px</dimen> <!-- 90% of boardWidth -->
-    <dimen name="canvasHeight" tools:ignore="PxUsage">731px</dimen> <!-- 81.49386845039% of boardHeight -->
-    <dimen name="canvasMarginTop" tools:ignore="PxUsage">82px</dimen> <!-- 9.1415830546265% of boardHeight -->
+    <dimen name="canvasWidth" tools:ignore="PxUsage">1458px</dimen>
+    <dimen name="canvasHeight" tools:ignore="PxUsage">731px</dimen>
+    <dimen name="canvasMarginTop" tools:ignore="PxUsage">82px</dimen>
 
     <!-- Buttons -->
     <dimen name="buttonWidth" tools:ignore="PxUsage">260px</dimen>

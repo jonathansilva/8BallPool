@@ -4,6 +4,8 @@
 
 É preciso que você faça alterações no arquivo *dimens.xml* para ajustar o layout à mesa do jogo
 
+Use o Android Studio para realizar as alterações e gerar o .apk
+
 > Anti-ban, apenas se você seguir estes passos:
 
 - Não utilize o mesmo *nome de pacote* ( app.hack.eightballpool )
@@ -16,13 +18,17 @@
 
 *Atenção:* Não teste o hack em seu celular sem seguir os passos acima
 
-> Após você fechar e quiser exibir o Menu novamente, balance o celular
+> O hack é exibido na tela, sempre que balançar/agitar o celular
+
+*No momento, estou sem tempo para fazer melhorias*
 
 - **Important**
 
 *I am not responsible for the use of this hack*
 
 You need to make changes to the *dimens.xml* file to fit the layout to the game table
+
+Use Android Studio to make the changes and generate the .apk
 
 > Anti-ban, only if you follow these steps:
 
@@ -36,7 +42,9 @@ It is recommended that you also change the name of the app
 
 *Attention:* Do not test the hack on your smartphone without following the above steps
 
-> After you close and want to display the Menu again, shake your smartphone
+> The hack is displayed on the screen whenever you shake the phone
+
+*I'm currently out of time to make improvements*
 
 ### Dimens.xml
 

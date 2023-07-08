@@ -25,6 +25,7 @@ public class App extends Application {
             serviceChannel.setSound(null, null);
 
             NotificationManager manager = getSystemService(NotificationManager.class);
+            
             manager.createNotificationChannel(serviceChannel);
         }
     }

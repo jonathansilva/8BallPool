@@ -104,10 +104,13 @@ public class Normal extends View {
                 }
 
                 trackStatus = true;
+
                 invalidate();
+
                 break;
             case MotionEvent.ACTION_UP:
                 trackStatus = false;
+                
                 break;
         }
 

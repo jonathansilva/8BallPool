@@ -255,6 +255,7 @@ public class Trickshot extends View {
                 }
 
                 invalidate();
+                
                 break;
             case MotionEvent.ACTION_MOVE:
                 xOnMotion = event.getX();
@@ -349,10 +350,13 @@ public class Trickshot extends View {
                 }
 
                 trackStatus = true;
+
                 invalidate();
+                
                 break;
             case MotionEvent.ACTION_UP:
                 trackStatus = false;
+
                 break;
         }
 
@@ -464,7 +468,7 @@ public class Trickshot extends View {
         float deltaX = xCircleTwo - xCircleOne;
         float deltaY = yCircleOne - yCircleTwo;
 
-        angle = (float) Math.toDegrees(Math.atan2( deltaY, deltaX ));
+        angle = (float) Math.toDegrees(Math.atan2(deltaY, deltaX));
 
         if (angle < 0) {
             angle += 360;

@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void init() {
         Control.start(this);
+
         finish();
     }
 
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 init();
             } else {
                 Toast.makeText(this, "Permission not available", Toast.LENGTH_SHORT).show();
+                
                 finish();
             }
 
