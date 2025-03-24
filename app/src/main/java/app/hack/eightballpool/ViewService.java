@@ -64,6 +64,7 @@ public class ViewService extends Service {
         btn_normal = view.findViewById(R.id.btn_normal);
         btn_trickshot = view.findViewById(R.id.btn_trickshot);
         btn_nineBall = view.findViewById(R.id.btn_nineBall);
+
         Button btn_hide = view.findViewById(R.id.btn_hide);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.touch);
@@ -86,7 +87,6 @@ public class ViewService extends Service {
         float heightCanvas = (int) getResources().getDimension(R.dimen.canvasHeight);
 
         normal.setPositionCircle((widthCanvas / 2f), (heightCanvas / 2f));
-
         normal.setRotation(0);
     }
 
@@ -102,7 +102,6 @@ public class ViewService extends Service {
         trickshot.setPositionCircleTwo((widthCanvas / 2f) + 200, (heightCanvas / 2f));
 
         trickshot.setPositionControls(widthCanvas - 200, 200);
-
         trickshot.setRotation(0);
     }
 
@@ -126,7 +125,6 @@ public class ViewService extends Service {
         nineBall.setPositionCircleTwo((widthCanvas / 2f) - 254, (heightCanvas / 2f) - 136.5f);
 
         nineBall.setPositionLine(left, top, right, bottom);
-
         nineBall.setRotation(0);
     }
 
@@ -134,9 +132,11 @@ public class ViewService extends Service {
         @Override
         public void onClick(View v) {
             mediaPlayer.start();
+
             btn_normal.setBackgroundResource(R.drawable.button_normal_clicked);
             btn_trickshot.setBackgroundResource(R.drawable.button_trickshot);
             btn_nineBall.setBackgroundResource(R.drawable.button_nineball);
+
             showNormal();
         }
     };
@@ -145,9 +145,11 @@ public class ViewService extends Service {
         @Override
         public void onClick(View v) {
             mediaPlayer.start();
+
             btn_trickshot.setBackgroundResource(R.drawable.button_trickshot_clicked);
             btn_normal.setBackgroundResource(R.drawable.button_normal);
             btn_nineBall.setBackgroundResource(R.drawable.button_nineball);
+
             showTrickshot();
         }
     };
@@ -156,9 +158,11 @@ public class ViewService extends Service {
         @Override
         public void onClick(View v) {
             mediaPlayer.start();
+
             btn_normal.setBackgroundResource(R.drawable.button_normal);
             btn_trickshot.setBackgroundResource(R.drawable.button_trickshot);
             btn_nineBall.setBackgroundResource(R.drawable.button_nineball_clicked);
+
             showNineBall();
         }
     };
@@ -180,16 +184,20 @@ public class ViewService extends Service {
 
             Intent stopNotificationIntent = new Intent(this, ViewService.class);
             stopNotificationIntent.setAction("STOP");
+
+            @SuppressLint("UnspecifiedImmutableFlag")
             PendingIntent stopPendingIntent = PendingIntent.getService(this, 0, stopNotificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
             Intent notificationIntent = new Intent(this, MainActivity.class);
+
+            @SuppressLint("UnspecifiedImmutableFlag")
             PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
 
             Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
-                    .setSmallIcon(R.drawable.ic_android)
-                    .setContentIntent(pendingIntent)
-                    .addAction(0, getString(R.string.close), stopPendingIntent)
-                    .build();
+                .setSmallIcon(R.drawable.ic_android)
+                .setContentIntent(pendingIntent)
+                .addAction(0, getString(R.string.close), stopPendingIntent)
+                .build();
 
             startForeground(1, notification);
         }
@@ -199,6 +207,7 @@ public class ViewService extends Service {
 
     private void stopForegroundService() {
         Control.stop(this);
+
         stopForeground(true);
         stopSelf();
     }
@@ -207,11 +216,11 @@ public class ViewService extends Service {
         float boardMarginBottom = getResources().getDimension(R.dimen.boardMarginBottom);
 
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
-                WindowManager.LayoutParams.WRAP_CONTENT,
-                WindowManager.LayoutParams.WRAP_CONTENT,
-                WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
-                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
-                PixelFormat.TRANSLUCENT
+            WindowManager.LayoutParams.WRAP_CONTENT,
+            WindowManager.LayoutParams.WRAP_CONTENT,
+            WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
+            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+            PixelFormat.TRANSLUCENT
         );
 
         params.screenOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
@@ -239,7 +248,6 @@ public class ViewService extends Service {
                 board.setVisibility(View.VISIBLE);
                 board.setAlpha(0.0f);
                 board.animate().setDuration(1000).alpha(1.0f).setListener(new AnimatorListenerAdapter() {
-
                     @Override
                     public void onAnimationEnd(Animator animation) {
                         super.onAnimationEnd(animation);
@@ -258,11 +266,11 @@ public class ViewService extends Service {
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
         Objects.requireNonNull(sensorManager)
-                .registerListener(
-                        mSensorListener,
-                        sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
-                        SensorManager.SENSOR_DELAY_FASTEST
-                );
+            .registerListener(
+                mSensorListener,
+                sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                SensorManager.SENSOR_DELAY_FASTEST
+            );
 
         accel = 10f;
         accelCurrent = SensorManager.GRAVITY_EARTH;

@@ -150,45 +150,45 @@ public class Trickshot extends View {
                 trackStatus = false;
 
                 if (xOnTouch > (xCircleOne - radiusCircleOne)
-                        && xOnTouch < (xCircleOne + radiusCircleOne)
-                        && yOnTouch > (yCircleOne - radiusCircleOne)
-                        && yOnTouch < (yCircleOne + radiusCircleOne)
+                    && xOnTouch < (xCircleOne + radiusCircleOne)
+                    && yOnTouch > (yCircleOne - radiusCircleOne)
+                    && yOnTouch < (yCircleOne + radiusCircleOne)
                 ) {
                     trackStatus = true;
                     circle = 1;
                 }
 
                 if (xOnTouch > (xCircleTwo - radiusCircleTwo)
-                        && xOnTouch < (xCircleTwo + radiusCircleTwo)
-                        && yOnTouch > (yCircleTwo - radiusCircleTwo)
-                        && yOnTouch < (yCircleTwo + radiusCircleTwo)
+                    && xOnTouch < (xCircleTwo + radiusCircleTwo)
+                    && yOnTouch > (yCircleTwo - radiusCircleTwo)
+                    && yOnTouch < (yCircleTwo + radiusCircleTwo)
                 ) {
                     trackStatus = true;
                     circle = 2;
                 }
 
                 if (xOnTouch > (xCircleAuxTop - radiusCircleAux)
-                        && xOnTouch < (xCircleAuxTop + radiusCircleAux)
-                        && yOnTouch > (yCircleAuxTop - radiusCircleAux)
-                        && yOnTouch < (yCircleAuxTop + radiusCircleAux)
+                    && xOnTouch < (xCircleAuxTop + radiusCircleAux)
+                    && yOnTouch > (yCircleAuxTop - radiusCircleAux)
+                    && yOnTouch < (yCircleAuxTop + radiusCircleAux)
                 ) {
                     trackStatus = true;
                     circle = 3;
                 }
 
                 if (xOnTouch > (xCircleAuxBottom - radiusCircleAux)
-                        && xOnTouch < (xCircleAuxBottom + radiusCircleAux)
-                        && yOnTouch > (yCircleAuxBottom - radiusCircleAux)
-                        && yOnTouch < (yCircleAuxBottom + radiusCircleAux)
+                    && xOnTouch < (xCircleAuxBottom + radiusCircleAux)
+                    && yOnTouch > (yCircleAuxBottom - radiusCircleAux)
+                    && yOnTouch < (yCircleAuxBottom + radiusCircleAux)
                 ) {
                     trackStatus = true;
                     circle = 4;
                 }
 
                 if (xOnTouch > (xCircleAuxControls - radiusCircleAuxControls)
-                        && xOnTouch < (xCircleAuxControls + radiusCircleAuxControls)
-                        && yOnTouch > (yCircleAuxControls - radiusCircleAuxControls)
-                        && yOnTouch < (yCircleAuxControls + radiusCircleAuxControls)
+                    && xOnTouch < (xCircleAuxControls + radiusCircleAuxControls)
+                    && yOnTouch > (yCircleAuxControls - radiusCircleAuxControls)
+                    && yOnTouch < (yCircleAuxControls + radiusCircleAuxControls)
                 ) {
                     trackStatus = true;
                     circle = 5;
@@ -196,9 +196,9 @@ public class Trickshot extends View {
 
                 // Control: Top
                 if (xOnTouch > (xCircleAuxControlTop - radiusCircleAuxControl)
-                        && xOnTouch < (xCircleAuxControlTop + radiusCircleAuxControl)
-                        && yOnTouch > (yCircleAuxControlTop - radiusCircleAuxControl)
-                        && yOnTouch < (yCircleAuxControlTop + radiusCircleAuxControl)
+                    && xOnTouch < (xCircleAuxControlTop + radiusCircleAuxControl)
+                    && yOnTouch > (yCircleAuxControlTop - radiusCircleAuxControl)
+                    && yOnTouch < (yCircleAuxControlTop + radiusCircleAuxControl)
                 ) {
                     yCircleOne = yCircleOne - 1.0f;
 
@@ -211,9 +211,9 @@ public class Trickshot extends View {
 
                 // Control: Bottom
                 if (xOnTouch > (xCircleAuxControlBottom - radiusCircleAuxControl)
-                        && xOnTouch < (xCircleAuxControlBottom + radiusCircleAuxControl)
-                        && yOnTouch > (yCircleAuxControlBottom - radiusCircleAuxControl)
-                        && yOnTouch < (yCircleAuxControlBottom + radiusCircleAuxControl)
+                    && xOnTouch < (xCircleAuxControlBottom + radiusCircleAuxControl)
+                    && yOnTouch > (yCircleAuxControlBottom - radiusCircleAuxControl)
+                    && yOnTouch < (yCircleAuxControlBottom + radiusCircleAuxControl)
                 ) {
                     yCircleOne = yCircleOne + 1.0f;
 
@@ -226,9 +226,9 @@ public class Trickshot extends View {
 
                 // Control: Left
                 if (xOnTouch > (xCircleAuxControlLeft - radiusCircleAuxControl)
-                        && xOnTouch < (xCircleAuxControlLeft + radiusCircleAuxControl)
-                        && yOnTouch > (yCircleAuxControlLeft - radiusCircleAuxControl)
-                        && yOnTouch < (yCircleAuxControlLeft + radiusCircleAuxControl)
+                    && xOnTouch < (xCircleAuxControlLeft + radiusCircleAuxControl)
+                    && yOnTouch > (yCircleAuxControlLeft - radiusCircleAuxControl)
+                    && yOnTouch < (yCircleAuxControlLeft + radiusCircleAuxControl)
                 ) {
                     xCircleOne = xCircleOne - 1.0f;
 
@@ -241,9 +241,9 @@ public class Trickshot extends View {
 
                 // Control: Right
                 if (xOnTouch > (xCircleAuxControlRight - radiusCircleAuxControl)
-                        && xOnTouch < (xCircleAuxControlRight + radiusCircleAuxControl)
-                        && yOnTouch > (yCircleAuxControlRight - radiusCircleAuxControl)
-                        && yOnTouch < (yCircleAuxControlRight + radiusCircleAuxControl)
+                    && xOnTouch < (xCircleAuxControlRight + radiusCircleAuxControl)
+                    && yOnTouch > (yCircleAuxControlRight - radiusCircleAuxControl)
+                    && yOnTouch < (yCircleAuxControlRight + radiusCircleAuxControl)
                 ) {
                     xCircleOne = xCircleOne + 1.0f;
 
@@ -373,7 +373,6 @@ public class Trickshot extends View {
 
         // Top or Bottom
         if (touchedTheWall) {
-
             // Left or Right
             if (xCircleTwo == getWidth() || xCircleTwo == 0) {
                 angle -= 180;

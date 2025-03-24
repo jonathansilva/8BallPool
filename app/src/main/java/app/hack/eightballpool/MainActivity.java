@@ -17,16 +17,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         if (!Settings.canDrawOverlays(this)) {
-            startActivityForResult(
-                    new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName())),
-                    REQUEST_CODE
-            );
+            startActivityForResult(new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName())), REQUEST_CODE);
         } else {
             init();
         }
 
         // Dimensions of device
         DisplayMetrics metrics = new DisplayMetrics();
+        
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
 
         int deviceWidth = metrics.widthPixels;

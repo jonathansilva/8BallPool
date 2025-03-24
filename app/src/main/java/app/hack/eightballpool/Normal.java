@@ -71,9 +71,9 @@ public class Normal extends View {
                 yOnTouch = event.getY();
 
                 trackStatus = xOnTouch > (xCircle - radius)
-                        && xOnTouch < (xCircle + radius)
-                        && yOnTouch > (yCircle - radius)
-                        && yOnTouch < (yCircle + radius);
+                    && xOnTouch < (xCircle + radius)
+                    && yOnTouch > (yCircle - radius)
+                    && yOnTouch < (yCircle + radius);
 
                 break;
             case MotionEvent.ACTION_MOVE:
