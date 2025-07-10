@@ -9,6 +9,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import ball8.R;
+
 public class Normal extends View {
     private Paint line, shadow, circle;
 
@@ -110,7 +112,7 @@ public class Normal extends View {
                 break;
             case MotionEvent.ACTION_UP:
                 trackStatus = false;
-                
+
                 break;
         }
 

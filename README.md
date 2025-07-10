@@ -5,10 +5,9 @@ Use o Android Studio para importar o projeto e gerar o .apk
 É preciso que você faça alterações no arquivo *[dimens.xml](https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/values/dimens.xml)* para ajustar o layout à mesa do jogo
 
 - Não utilize o mesmo *nome de pacote* ( app.hack.eightballpool )
-- Crie um *nome de pacote* único para o seu celular
 - Não publique na Play Store
 
-> O hack é exibido na tela, sempre que balançar/agitar o celular
+> O hack é exibido na tela sempre que balançar/agitar o celular
 
 **Important**
 
@@ -17,7 +16,6 @@ Use Android Studio to import the project and generate the .apk
 You need to make changes to the *[dimens.xml](https://github.com/jonathansilva/8BallPool/blob/master/app/src/main/res/values/dimens.xml)* file to fit the layout to the game table
 
 - Do not use the same *package name* ( app.hack.eightballpool )
-- Create a unique *package name* for your phone
 - Do not post on the Play Store
 
 > The hack is displayed on the screen whenever you shake the phone
