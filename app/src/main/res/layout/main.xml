@@ -46,7 +46,7 @@
             android:background="@drawable/button_normal"
             android:text="@string/normal"
             android:textColor="@color/colorWhite"
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription,TouchTargetSizeCheck" />
 
         <Button
             android:id="@+id/btn_trickshot"
@@ -57,7 +57,7 @@
             android:background="@drawable/button_trickshot"
             android:text="@string/trickshot"
             android:textColor="@color/colorWhite"
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription,TouchTargetSizeCheck" />
 
         <Button
             android:id="@+id/btn_nineBall"
@@ -69,7 +69,7 @@
             android:background="@drawable/button_nineball"
             android:text="@string/nineBall"
             android:textColor="@color/colorWhite"
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription,TextContrastCheck,TouchTargetSizeCheck" />
 
         <Button
             android:id="@+id/btn_hide"
@@ -81,7 +81,7 @@
             android:background="@drawable/button_hide"
             android:text="@string/hide"
             android:textColor="@color/colorWhite"
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription,TouchTargetSizeCheck" />
 
     </RelativeLayout>
 </FrameLayout>

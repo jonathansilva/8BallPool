@@ -29,6 +29,8 @@ import java.util.Objects;
 
 import static app.hack.eightballpool.App.CHANNEL_ID;
 
+import ball8.R;
+
 public class ViewService extends Service {
     private WindowManager windowManager;
     private SensorManager sensorManager;

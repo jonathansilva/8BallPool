@@ -7,6 +7,8 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
+import ball8.R;
+
 public class NineBall extends View {
     private Paint line;
     private Paint circleOne;

@@ -10,6 +10,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import ball8.R;
+
 public class Trickshot extends View {
     private Paint line;
     private Paint reflectLine;
@@ -255,7 +257,7 @@ public class Trickshot extends View {
                 }
 
                 invalidate();
-                
+
                 break;
             case MotionEvent.ACTION_MOVE:
                 xOnMotion = event.getX();
@@ -352,7 +354,7 @@ public class Trickshot extends View {
                 trackStatus = true;
 
                 invalidate();
-                
+
                 break;
             case MotionEvent.ACTION_UP:
                 trackStatus = false;
