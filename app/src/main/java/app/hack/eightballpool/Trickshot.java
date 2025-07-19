@@ -10,6 +10,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+
 import ball8.R;
 
 public class Trickshot extends View {
@@ -366,7 +368,7 @@ public class Trickshot extends View {
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
+    protected void onDraw(@NonNull Canvas canvas) {
         super.onDraw(canvas);
 
         canvas.drawLine(xCircleOne, yCircleOne, xCircleTwo, yCircleTwo, line);

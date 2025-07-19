@@ -1,5 +1,7 @@
 .gradle
 .idea
 .vscode/
+gradlew
+gradlew.bat
 build
 /local.properties
