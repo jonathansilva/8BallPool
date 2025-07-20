@@ -20,19 +20,23 @@ You need to make changes to the *[dimens.xml](https://github.com/jonathansilva/8
 
 > The hack is displayed on the screen whenever you shake the phone
 
-**[Videos](https://www.youtube.com/playlist?list=PL1Z6DvZsu0GdBTJmiutGIktcVpQwFvaA0)**
-
 ## Normal
 
-![photo_2022-01-26_12-48-59](https://user-images.githubusercontent.com/33843748/151197094-71007b9b-bcf0-431c-ad01-5595201b2c20.jpg)
+![normal](https://github.com/jonathansilva/8BallPool/blob/master/screenshots/screenshot-normal.png?raw=true)
 
-## Simple Trickshot
+## Trickshot
 
-![Screenshot_20201112-175443](https://user-images.githubusercontent.com/33843748/98998464-ee266780-2514-11eb-8880-e9b16854459b.png)
+![trickshot-one](https://github.com/jonathansilva/8BallPool/blob/master/screenshots/screenshot-trickshot-one.png?raw=true)
 
-![Screenshot_20201112-180023](https://user-images.githubusercontent.com/33843748/98998488-f7afcf80-2514-11eb-86fd-c8105c3d0494.png)
+![trickshot-two](https://github.com/jonathansilva/8BallPool/blob/master/screenshots/screenshot-trickshot-two.png?raw=true)
+
+![trickshot-three](https://github.com/jonathansilva/8BallPool/blob/master/screenshots/screenshot-trickshot-three.png?raw=true)
 
 ## 9 Ball
+
+Este modo não é mais recomendado e será removido em futuras atualizações. O jogo troca a posição X das bolas ao iniciar a mesa
+
+This mode is no longer recommended and will be removed in future updates. The game changes the X position of the balls when starting the table
 
 > Apenas um guia / Just a guide
 

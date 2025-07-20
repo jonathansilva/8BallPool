@@ -63,13 +63,25 @@
             android:id="@+id/btn_nineBall"
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
-            android:layout_marginEnd="@dimen/buttonNineBallMarginEnd"
             android:layout_alignParentBottom="true"
             android:layout_toStartOf="@+id/btn_hide"
             android:background="@drawable/button_nineball"
             android:text="@string/nineBall"
             android:textColor="@color/colorWhite"
             tools:ignore="ContentDescription,TextContrastCheck,TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/btn_trickshot_second_ine"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:layout_marginEnd="@dimen/buttonTrickshotSecondLineMarginEnd"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/button_trickshot_second_line"
+            android:text="@string/trickshot_second_line"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone"
+            tools:ignore="ContentDescription,TouchTargetSizeCheck" />
 
         <Button
             android:id="@+id/btn_hide"

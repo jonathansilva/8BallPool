@@ -29,7 +29,7 @@ import java.util.Objects;
 
 import static app.hack.eightballpool.App.CHANNEL_ID;
 
-import ball8.R;
+import myproject.R;
 
 public class ViewService extends Service {
     private WindowManager windowManager;
@@ -39,10 +39,12 @@ public class ViewService extends Service {
     private Normal normal;
     private Trickshot trickshot;
     private NineBall nineBall;
-    private Button btn_normal, btn_trickshot, btn_nineBall;
+    private Button btn_normal, btn_trickshot, btn_trickshot_second_line, btn_nineBall;
     private MediaPlayer mediaPlayer;
 
     private float accel, accelCurrent, accelLast;
+
+    boolean secondLine = false;
 
     public ViewService() {}
 
@@ -65,6 +67,7 @@ public class ViewService extends Service {
 
         btn_normal = view.findViewById(R.id.btn_normal);
         btn_trickshot = view.findViewById(R.id.btn_trickshot);
+        btn_trickshot_second_line = view.findViewById(R.id.btn_trickshot_second_ine);
         btn_nineBall = view.findViewById(R.id.btn_nineBall);
 
         Button btn_hide = view.findViewById(R.id.btn_hide);
@@ -73,6 +76,7 @@ public class ViewService extends Service {
 
         btn_normal.setOnClickListener(showNormal);
         btn_trickshot.setOnClickListener(showTrickshot);
+        btn_trickshot_second_line.setOnClickListener(showSecondLine);
         btn_nineBall.setOnClickListener(showNineBall);
         btn_hide.setOnClickListener(hide);
 
@@ -84,6 +88,8 @@ public class ViewService extends Service {
         trickshot.setVisibility(View.GONE);
         nineBall.setVisibility(View.GONE);
         normal.setVisibility(View.VISIBLE);
+
+        btn_trickshot_second_line.setVisibility(View.GONE);
 
         float widthCanvas = (int) getResources().getDimension(R.dimen.canvasWidth);
         float heightCanvas = (int) getResources().getDimension(R.dimen.canvasHeight);
@@ -97,8 +103,13 @@ public class ViewService extends Service {
         nineBall.setVisibility(View.GONE);
         trickshot.setVisibility(View.VISIBLE);
 
+        btn_trickshot_second_line.setVisibility(View.VISIBLE);
+
         float widthCanvas = (int) getResources().getDimension(R.dimen.canvasWidth);
         float heightCanvas = (int) getResources().getDimension(R.dimen.canvasHeight);
+
+        // Bug fix
+        trickshot.resetLines();
 
         trickshot.setPositionCircleOne((widthCanvas / 2f) - 200, (heightCanvas / 2f));
         trickshot.setPositionCircleTwo((widthCanvas / 2f) + 200, (heightCanvas / 2f));
@@ -107,10 +118,22 @@ public class ViewService extends Service {
         trickshot.setRotation(0);
     }
 
+    private void showSecondLine() {
+        secondLine =! secondLine;
+
+        if (!secondLine) {
+            btn_trickshot_second_line.setBackgroundResource(R.drawable.button_trickshot_second_line);
+        }
+
+        trickshot.secondLine(secondLine);
+    }
+
     private void showNineBall() {
         normal.setVisibility(View.GONE);
         trickshot.setVisibility(View.GONE);
         nineBall.setVisibility(View.VISIBLE);
+
+        btn_trickshot_second_line.setVisibility(View.GONE);
 
         float widthCanvas = (int) getResources().getDimension(R.dimen.canvasWidth);
         float heightCanvas = (int) getResources().getDimension(R.dimen.canvasHeight);
@@ -153,6 +176,17 @@ public class ViewService extends Service {
             btn_nineBall.setBackgroundResource(R.drawable.button_nineball);
 
             showTrickshot();
+        }
+    };
+
+    private final View.OnClickListener showSecondLine = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            mediaPlayer.start();
+
+            btn_trickshot_second_line.setBackgroundResource(R.drawable.button_trickshot_second_line_clicked);
+
+            showSecondLine();
         }
     };
 

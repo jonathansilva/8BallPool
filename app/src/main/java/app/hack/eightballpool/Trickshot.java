@@ -12,7 +12,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import ball8.R;
+import myproject.R;
 
 public class Trickshot extends View {
     private Paint line;
@@ -20,8 +20,8 @@ public class Trickshot extends View {
     private Paint circleOne;
     private Paint circleOneMiddle;
     private Paint circleOneMiddleBorder;
-    private Paint circleAuxTop;
-    private Paint circleAuxBottom;
+    private Paint circleOneAuxTop;
+    private Paint circleOneAuxBottom;
     private Paint circleTwo;
     private Paint circleAuxControls;
     private Paint circleAuxControlTop;
@@ -33,8 +33,8 @@ public class Trickshot extends View {
     float xOnMotion, yOnMotion;
     float xCircleOne, yCircleOne;
     float xCircleTwo, yCircleTwo;
-    float xCircleAuxTop, yCircleAuxTop;
-    float xCircleAuxBottom, yCircleAuxBottom;
+    float xCircleOneAuxTop, yCircleOneAuxTop;
+    float xCircleOneAuxBottom, yCircleOneAuxBottom;
     float xCircleAuxControls, yCircleAuxControls;
     float xCircleAuxControlTop, yCircleAuxControlTop;
     float xCircleAuxControlBottom, yCircleAuxControlBottom;
@@ -50,7 +50,11 @@ public class Trickshot extends View {
     int radiusCircleAuxControls = 60;
     int radiusCircleAuxControl = 50;
 
+    int radiusBall = 22;
+
     boolean trackStatus, touchedTheWall;
+
+    boolean showSecondLine = false;
 
     public Trickshot(Context context) {
         super(context);
@@ -77,8 +81,8 @@ public class Trickshot extends View {
         circleOneMiddle = new Paint();
         circleOneMiddleBorder = new Paint();
         circleTwo = new Paint();
-        circleAuxTop = new Paint();
-        circleAuxBottom = new Paint();
+        circleOneAuxTop = new Paint();
+        circleOneAuxBottom = new Paint();
         circleAuxControls = new Paint();
         circleAuxControlTop = new Paint();
         circleAuxControlBottom = new Paint();
@@ -109,18 +113,17 @@ public class Trickshot extends View {
         circleOneMiddleBorder.setColor(getContext().getColor(R.color.colorWhite));
         circleOneMiddleBorder.setAntiAlias(true);
 
-        circleTwo.setStyle(Paint.Style.STROKE);
-        circleTwo.setStrokeWidth(10);
-        circleTwo.setColor(Color.BLACK);
+        circleOneAuxTop.setStyle(Paint.Style.FILL);
+        circleOneAuxTop.setColor(getContext().getColor(R.color.colorAlphaWhite));
+        circleOneAuxTop.setAntiAlias(true);
+
+        circleOneAuxBottom.setStyle(Paint.Style.FILL);
+        circleOneAuxBottom.setColor(getContext().getColor(R.color.colorAlphaWhite));
+        circleOneAuxBottom.setAntiAlias(true);
+
+        circleTwo.setStyle(Paint.Style.FILL);
+        circleTwo.setColor(getContext().getColor(R.color.colorWhite));
         circleTwo.setAntiAlias(true);
-
-        circleAuxTop.setStyle(Paint.Style.FILL);
-        circleAuxTop.setColor(getContext().getColor(R.color.colorAlphaWhite));
-        circleAuxTop.setAntiAlias(true);
-
-        circleAuxBottom.setStyle(Paint.Style.FILL);
-        circleAuxBottom.setColor(getContext().getColor(R.color.colorAlphaWhite));
-        circleAuxBottom.setAntiAlias(true);
 
         circleAuxControls.setStyle(Paint.Style.FILL);
         circleAuxControls.setColor(getContext().getColor(R.color.colorAlphaWhite));
@@ -171,24 +174,25 @@ public class Trickshot extends View {
                     circle = 2;
                 }
 
-                if (xOnTouch > (xCircleAuxTop - radiusCircleAux)
-                    && xOnTouch < (xCircleAuxTop + radiusCircleAux)
-                    && yOnTouch > (yCircleAuxTop - radiusCircleAux)
-                    && yOnTouch < (yCircleAuxTop + radiusCircleAux)
+                if (xOnTouch > (xCircleOneAuxTop - radiusCircleAux)
+                    && xOnTouch < (xCircleOneAuxTop + radiusCircleAux)
+                    && yOnTouch > (yCircleOneAuxTop - radiusCircleAux)
+                    && yOnTouch < (yCircleOneAuxTop + radiusCircleAux)
                 ) {
                     trackStatus = true;
                     circle = 3;
                 }
 
-                if (xOnTouch > (xCircleAuxBottom - radiusCircleAux)
-                    && xOnTouch < (xCircleAuxBottom + radiusCircleAux)
-                    && yOnTouch > (yCircleAuxBottom - radiusCircleAux)
-                    && yOnTouch < (yCircleAuxBottom + radiusCircleAux)
+                if (xOnTouch > (xCircleOneAuxBottom - radiusCircleAux)
+                    && xOnTouch < (xCircleOneAuxBottom + radiusCircleAux)
+                    && yOnTouch > (yCircleOneAuxBottom - radiusCircleAux)
+                    && yOnTouch < (yCircleOneAuxBottom + radiusCircleAux)
                 ) {
                     trackStatus = true;
                     circle = 4;
                 }
 
+                // Control: Center
                 if (xOnTouch > (xCircleAuxControls - radiusCircleAuxControls)
                     && xOnTouch < (xCircleAuxControls + radiusCircleAuxControls)
                     && yOnTouch > (yCircleAuxControls - radiusCircleAuxControls)
@@ -206,11 +210,11 @@ public class Trickshot extends View {
                 ) {
                     yCircleOne = yCircleOne - 1.0f;
 
-                    xCircleAuxTop = xCircleOne + 110;
-                    yCircleAuxTop = yCircleOne - 140;
+                    xCircleOneAuxTop = xCircleOne + 110;
+                    yCircleOneAuxTop = yCircleOne - 140;
 
-                    xCircleAuxBottom = xCircleOne - 110;
-                    yCircleAuxBottom = yCircleOne + 140;
+                    xCircleOneAuxBottom = xCircleOne - 110;
+                    yCircleOneAuxBottom = yCircleOne + 140;
                 }
 
                 // Control: Bottom
@@ -221,11 +225,11 @@ public class Trickshot extends View {
                 ) {
                     yCircleOne = yCircleOne + 1.0f;
 
-                    xCircleAuxTop = xCircleOne + 110;
-                    yCircleAuxTop = yCircleOne - 140;
+                    xCircleOneAuxTop = xCircleOne + 110;
+                    yCircleOneAuxTop = yCircleOne - 140;
 
-                    xCircleAuxBottom = xCircleOne - 110;
-                    yCircleAuxBottom = yCircleOne + 140;
+                    xCircleOneAuxBottom = xCircleOne - 110;
+                    yCircleOneAuxBottom = yCircleOne + 140;
                 }
 
                 // Control: Left
@@ -236,11 +240,11 @@ public class Trickshot extends View {
                 ) {
                     xCircleOne = xCircleOne - 1.0f;
 
-                    xCircleAuxTop = xCircleOne + 110;
-                    yCircleAuxTop = yCircleOne - 140;
+                    xCircleOneAuxTop = xCircleOne + 110;
+                    yCircleOneAuxTop = yCircleOne - 140;
 
-                    xCircleAuxBottom = xCircleOne - 110;
-                    yCircleAuxBottom = yCircleOne + 140;
+                    xCircleOneAuxBottom = xCircleOne - 110;
+                    yCircleOneAuxBottom = yCircleOne + 140;
                 }
 
                 // Control: Right
@@ -251,11 +255,11 @@ public class Trickshot extends View {
                 ) {
                     xCircleOne = xCircleOne + 1.0f;
 
-                    xCircleAuxTop = xCircleOne + 110;
-                    yCircleAuxTop = yCircleOne - 140;
+                    xCircleOneAuxTop = xCircleOne + 110;
+                    yCircleOneAuxTop = yCircleOne - 140;
 
-                    xCircleAuxBottom = xCircleOne - 110;
-                    yCircleAuxBottom = yCircleOne + 140;
+                    xCircleOneAuxBottom = xCircleOne - 110;
+                    yCircleOneAuxBottom = yCircleOne + 140;
                 }
 
                 invalidate();
@@ -269,11 +273,11 @@ public class Trickshot extends View {
                     xCircleOne = xOnMotion;
                     yCircleOne = yOnMotion;
 
-                    xCircleAuxTop = xCircleOne + 110;
-                    yCircleAuxTop = yCircleOne - 140;
+                    xCircleOneAuxTop = xCircleOne + 110;
+                    yCircleOneAuxTop = yCircleOne - 140;
 
-                    xCircleAuxBottom = xCircleOne - 110;
-                    yCircleAuxBottom = yCircleOne + 140;
+                    xCircleOneAuxBottom = xCircleOne - 110;
+                    yCircleOneAuxBottom = yCircleOne + 140;
 
                     checkCircleOneCollision();
                 }
@@ -285,52 +289,52 @@ public class Trickshot extends View {
                     touchedTheWall = false;
 
                     // Top
-                    if (yOnMotion < 0) {
-                        yCircleTwo = 0;
+                    if (yOnMotion < radiusBall) {
+                        yCircleTwo = radiusBall;
                         touchedTheWall = true;
                     }
 
                     // Bottom
-                    if (yOnMotion > getHeight()) {
-                        yCircleTwo = getHeight();
+                    if (yOnMotion > (getHeight() - radiusBall)) {
+                        yCircleTwo = getHeight() - radiusBall;
                         touchedTheWall = true;
                     }
 
                     // Left
-                    if (xOnMotion < 0) {
-                        xCircleTwo = 0;
+                    if (xOnMotion < radiusBall) {
+                        xCircleTwo = radiusBall;
                         touchedTheWall = true;
                     }
 
                     // Right
-                    if (xOnMotion > getWidth()) {
-                        xCircleTwo = getWidth();
+                    if (xOnMotion > (getWidth() - radiusBall)) {
+                        xCircleTwo = getWidth() - radiusBall;
                         touchedTheWall = true;
                     }
                 }
 
                 if (circle == 3) {
-                    xCircleAuxTop = xOnMotion;
-                    yCircleAuxTop = yOnMotion;
+                    xCircleOneAuxTop = xOnMotion;
+                    yCircleOneAuxTop = yOnMotion;
 
-                    xCircleOne = xCircleAuxTop - 110;
-                    yCircleOne = yCircleAuxTop + 140;
+                    xCircleOne = xCircleOneAuxTop - 110;
+                    yCircleOne = yCircleOneAuxTop + 140;
 
-                    xCircleAuxBottom = xCircleOne - 110;
-                    yCircleAuxBottom = yCircleOne + 140;
+                    xCircleOneAuxBottom = xCircleOne - 110;
+                    yCircleOneAuxBottom = yCircleOne + 140;
 
                     checkCircleOneCollision();
                 }
 
                 if (circle == 4) {
-                    xCircleAuxBottom = xOnMotion;
-                    yCircleAuxBottom = yOnMotion;
+                    xCircleOneAuxBottom = xOnMotion;
+                    yCircleOneAuxBottom = yOnMotion;
 
-                    xCircleOne = xCircleAuxBottom + 110;
-                    yCircleOne = yCircleAuxBottom - 140;
+                    xCircleOne = xCircleOneAuxBottom + 110;
+                    yCircleOne = yCircleOneAuxBottom - 140;
 
-                    xCircleAuxTop = xCircleOne + 110;
-                    yCircleAuxTop = yCircleOne - 140;
+                    xCircleOneAuxTop = xCircleOne + 110;
+                    yCircleOneAuxTop = yCircleOne - 140;
 
                     checkCircleOneCollision();
                 }
@@ -375,27 +379,103 @@ public class Trickshot extends View {
 
         calculateAngle();
 
-        // Top or Bottom
         if (touchedTheWall) {
-            // Left or Right
-            if (xCircleTwo == getWidth() || xCircleTwo == 0) {
-                angle -= 180;
-            }
+            float reflectedAngleOne = getReflectedAngleOne();
 
-            drawReflectLine(canvas);
+            LineIntersection firstReflectionEnd = LineIntersection.getLineIntersectionPoint(
+                xCircleTwo, yCircleTwo, reflectedAngleOne, getWidth(), getHeight(), radiusBall
+            );
+
+            canvas.drawLine(xCircleTwo, yCircleTwo, firstReflectionEnd.endX, firstReflectionEnd.endY, reflectLine);
+            canvas.drawCircle(firstReflectionEnd.endX, firstReflectionEnd.endY, radiusBall, circleTwo);
+
+            if (showSecondLine) {
+                float reflectedAngleTwo = getReflectedAngleTwo(reflectedAngleOne, firstReflectionEnd);
+
+                LineIntersection secondReflectionEnd = LineIntersection.getLineIntersectionPoint(
+                    firstReflectionEnd.endX, firstReflectionEnd.endY, reflectedAngleTwo, getWidth(), getHeight(), radiusBall
+                );
+
+                canvas.drawLine(firstReflectionEnd.endX, firstReflectionEnd.endY, secondReflectionEnd.endX, secondReflectionEnd.endY, reflectLine);
+                canvas.drawCircle(secondReflectionEnd.endX, secondReflectionEnd.endY, radiusBall, circleTwo);
+            }
         }
 
         canvas.drawCircle(xCircleOne, yCircleOne, radiusCircleOne, circleOne);
         canvas.drawCircle(xCircleOne, yCircleOne, 14, circleOneMiddleBorder);
         canvas.drawCircle(xCircleOne, yCircleOne, 12, circleOneMiddle);
-        canvas.drawCircle(xCircleTwo, yCircleTwo, radiusCircleTwo, circleTwo);
-        canvas.drawCircle(xCircleAuxTop, yCircleAuxTop, radiusCircleAux, circleAuxTop);
-        canvas.drawCircle(xCircleAuxBottom, yCircleAuxBottom, radiusCircleAux, circleAuxBottom);
+        canvas.drawCircle(xCircleTwo, yCircleTwo, radiusBall, circleTwo);
+        canvas.drawCircle(xCircleOneAuxTop, yCircleOneAuxTop, radiusCircleAux, circleOneAuxTop);
+        canvas.drawCircle(xCircleOneAuxBottom, yCircleOneAuxBottom, radiusCircleAux, circleOneAuxBottom);
         canvas.drawCircle(xCircleAuxControls, yCircleAuxControls, radiusCircleAuxControls, circleAuxControls);
         canvas.drawCircle(xCircleAuxControlTop, yCircleAuxControlTop, radiusCircleAuxControl, circleAuxControlTop);
         canvas.drawCircle(xCircleAuxControlBottom, yCircleAuxControlBottom, radiusCircleAuxControl, circleAuxControlBottom);
         canvas.drawCircle(xCircleAuxControlLeft, yCircleAuxControlLeft, radiusCircleAuxControl, circleAuxControlLeft);
         canvas.drawCircle(xCircleAuxControlRight, yCircleAuxControlRight, radiusCircleAuxControl, circleAuxControlRight);
+    }
+
+    private float getReflectedAngleOne() {
+        float reflectedAngleOne = angle;
+
+        // Top
+        if (yCircleTwo == radiusBall) {
+            reflectedAngleOne = 360 - angle;
+        }
+
+        // Bottom
+        if (yCircleTwo == (getHeight() - radiusBall)) {
+            reflectedAngleOne = 360 - angle;
+        }
+
+        // Left
+        if (xCircleTwo == radiusBall) {
+            reflectedAngleOne = 180 - angle;
+        }
+
+        // Right
+        if (xCircleTwo == (getWidth() - radiusBall)) {
+            reflectedAngleOne = 180 - angle;
+        }
+
+        if (reflectedAngleOne < 0) {
+            reflectedAngleOne += 360;
+        }
+
+        if (reflectedAngleOne >= 360) {
+            reflectedAngleOne -= 360;
+        }
+
+        return reflectedAngleOne;
+    }
+
+    private static float getReflectedAngleTwo(float reflectedAngleOne, LineIntersection firstReflectionEnd) {
+        float incidentAngleTwo; // O ângulo refletido da primeira linha se torna o incidente para a segunda
+
+        incidentAngleTwo = reflectedAngleOne;
+
+        float reflectedAngleTwo = incidentAngleTwo;
+
+        int wallHitTwo = firstReflectionEnd.wallHit; // A parede atingida pela primeira reflexão
+
+        // Determina o segundo ângulo refletido com base na parede atingida pela primeira reflexão
+        if (wallHitTwo == 1 || wallHitTwo == 2) { // Parede superior ou inferior atingida pela primeira reflexão
+            reflectedAngleTwo = 360 - incidentAngleTwo;
+        }
+
+        if (wallHitTwo == 3 || wallHitTwo == 4) { // Parede esquerda ou direita atingida pela primeira reflexão
+            reflectedAngleTwo = 180 - incidentAngleTwo;
+        }
+
+        // Normaliza o segundo ângulo refletido para estar entre 0 e 360 graus
+        if (reflectedAngleTwo < 0) {
+            reflectedAngleTwo += 360;
+        }
+
+        if (reflectedAngleTwo >= 360) {
+            reflectedAngleTwo -= 360;
+        }
+
+        return reflectedAngleTwo;
     }
 
     private void checkCircleOneCollision() {
@@ -417,28 +497,28 @@ public class Trickshot extends View {
             xCircleAuxControlRight = xCircleAuxControls + 140;
         }
 
-        if (xCircleOne < 0) {
-            xCircleOne = 0;
-            xCircleAuxTop = xCircleOne + 110;
-            yCircleAuxTop = yCircleOne - 140;
+        if (xCircleOne < radiusBall) {
+            xCircleOne = radiusBall;
+            xCircleOneAuxTop = xCircleOne + 110;
+            yCircleOneAuxTop = yCircleOne - 140;
         }
 
-        if (yCircleOne < 0) {
-            yCircleOne = 0;
-            xCircleAuxBottom = xCircleOne - 110;
-            yCircleAuxBottom = yCircleOne + 140;
+        if (yCircleOne < radiusBall) {
+            yCircleOne = radiusBall;
+            xCircleOneAuxBottom = xCircleOne - 110;
+            yCircleOneAuxBottom = yCircleOne + 140;
         }
 
-        if (xCircleOne > getWidth()) {
-            xCircleOne = getWidth();
-            xCircleAuxBottom = xCircleOne - 110;
-            yCircleAuxBottom = yCircleOne + 140;
+        if (xCircleOne > (getWidth() - radiusBall)) {
+            xCircleOne = getWidth() - radiusBall;
+            xCircleOneAuxBottom = xCircleOne - 110;
+            yCircleOneAuxBottom = yCircleOne + 140;
         }
 
-        if (yCircleOne > getHeight()) {
-            yCircleOne = getHeight();
-            xCircleAuxTop = xCircleOne + 110;
-            yCircleAuxTop = yCircleOne - 140;
+        if (yCircleOne > (getHeight() - radiusBall)) {
+            yCircleOne = getHeight() - radiusBall;
+            xCircleOneAuxTop = xCircleOne + 110;
+            yCircleOneAuxTop = yCircleOne - 140;
         }
     }
 
@@ -460,13 +540,6 @@ public class Trickshot extends View {
         }
     }
 
-    private void drawReflectLine(Canvas canvas) {
-        canvas.save();
-        canvas.rotate(angle, xCircleTwo, yCircleTwo);
-        canvas.drawLine(xCircleTwo, yCircleTwo, xCircleTwo + 1500, yCircleTwo, reflectLine);
-        canvas.restore();
-    }
-
     private void calculateAngle() {
         float deltaX = xCircleTwo - xCircleOne;
         float deltaY = yCircleOne - yCircleTwo;
@@ -482,11 +555,11 @@ public class Trickshot extends View {
         xCircleOne = x;
         yCircleOne = y;
 
-        xCircleAuxTop = x + 110;
-        yCircleAuxTop = y - 140;
+        xCircleOneAuxTop = x + 110;
+        yCircleOneAuxTop = y - 140;
 
-        xCircleAuxBottom = x - 110;
-        yCircleAuxBottom = y + 140;
+        xCircleOneAuxBottom = x - 110;
+        yCircleOneAuxBottom = y + 140;
     }
 
     public void setPositionCircleTwo(float x, float y) {
@@ -509,5 +582,15 @@ public class Trickshot extends View {
 
         xCircleAuxControlRight = xCircleAuxControls + 140;
         yCircleAuxControlRight = yCircleAuxControls;
+    }
+
+    public void resetLines() {
+        touchedTheWall = false;
+    }
+
+    public void secondLine(boolean secondLine) {
+        showSecondLine = secondLine;
+
+        invalidate();
     }
 }
