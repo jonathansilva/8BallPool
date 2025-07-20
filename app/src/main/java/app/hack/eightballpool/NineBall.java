@@ -9,7 +9,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import ball8.R;
+import myproject.R;
 
 public class NineBall extends View {
     private Paint line;
