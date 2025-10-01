@@ -6,21 +6,11 @@ buildscript {
     }
 
     dependencies {
-        // Keep your other dependencies like appcompat, material, etc.
-        // For example:
-        implementation 'androidx.appcompat:appcompat:1.6.1'
-
-        // Dependencies for local unit tests
-        testImplementation 'junit:junit:4.13.2'
-
-        // ADD/REPLACE THESE LINES for Android Instrumentation Tests
-        androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-        androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-        androidTestImplementation 'androidx.test:runner:1.5.2'
-
-        // This dependency contains the missing package `androidx.test.platform.app`
-        androidTestImplementation 'androidx.test:core-ktx:1.5.0'
+        //noinspection AndroidGradlePluginVersion
         classpath 'com.android.tools.build:gradle:8.2.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
     }
 }
 
