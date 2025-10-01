@@ -20,20 +20,20 @@
         Add the android:background="@color/colorAlphaWhite" in layout ( RelativeLayout ) to help the adjusts
     -->
 
-    <!-- Board (Redmi Note 11T Pro Plus landscape) -->
-    <dimen name="boardWidth" tools:ignore="PxUsage">2460px</dimen>
-    <dimen name="boardHeight" tools:ignore="PxUsage">1080px</dimen>
-    <dimen name="boardMarginBottom" tools:ignore="PxUsage">0.0099</dimen>
+    <!-- Board -->
+    <dimen name="boardWidth" tools:ignore="PxUsage">1620px</dimen>
+    <dimen name="boardHeight" tools:ignore="PxUsage">897px</dimen>
+    <dimen name="boardMarginBottom" tools:ignore="PxUsage">0.0099px</dimen>
 
-    <!-- Canvas (scaled proportionally) -->
-    <dimen name="canvasWidth" tools:ignore="PxUsage">2200px</dimen>
-    <dimen name="canvasHeight" tools:ignore="PxUsage">900px</dimen>
-    <dimen name="canvasMarginTop" tools:ignore="PxUsage">90px</dimen>
+    <!-- Canvas -->
+    <dimen name="canvasWidth" tools:ignore="PxUsage">1458px</dimen>
+    <dimen name="canvasHeight" tools:ignore="PxUsage">731px</dimen>
+    <dimen name="canvasMarginTop" tools:ignore="PxUsage">82px</dimen>
 
-    <!-- Buttons (scaled proportionally) -->
-    <dimen name="buttonWidth" tools:ignore="PxUsage">350px</dimen>
-    <dimen name="buttonHeight" tools:ignore="PxUsage">90px</dimen>
-    <dimen name="buttonNormalMarginStart" tools:ignore="PxUsage">220px</dimen>
-    <dimen name="buttonCloseMarginEnd" tools:ignore="PxUsage">210px</dimen>
-    <dimen name="buttonTrickshotSecondLineMarginEnd" tools:ignore="PxUsage">210px</dimen>
+    <!-- Buttons -->
+    <dimen name="buttonWidth" tools:ignore="PxUsage">280px</dimen>
+    <dimen name="buttonHeight" tools:ignore="PxUsage">75px</dimen>
+    <dimen name="buttonNormalMarginStart" tools:ignore="PxUsage">175px</dimen>
+    <dimen name="buttonCloseMarginEnd" tools:ignore="PxUsage">170px</dimen>
+    <dimen name="buttonTrickshotSecondLineMarginEnd" tools:ignore="PxUsage">170px</dimen>
 </resources>
