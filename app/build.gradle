@@ -39,7 +39,7 @@ dependencies {
     // androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     // With these new AndroidX dependencies:
-    androidTestImplementation 'androidx.test:runner:1.5.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5' // For JUnit4 test rules and runners
+    androidTestImplementation 'androidx.test:runner:1.7.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0' // For JUnit4 test rules and runners
 }
