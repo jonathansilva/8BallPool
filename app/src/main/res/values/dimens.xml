@@ -1,39 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <!--
-        My device: Xiaomi Mi A1
-        My android version: 9
+    Device: Xiaomi Redmi Note 14 Pro 5G
+    Display Resolution: 1220 x 2712
 
-        Use the Landscape mode
-        In Landscape mode, the values X and Y are inverted
+    Portrait:
+    Device Width: X => 1220
+    Device Height: Y => 2712
 
-        Portrait:
-        Device Width: X => 1080
-        Device Height: Y => 1920
-
-        Landscape:
-        Device Width: X => 1920
-        Device Height: Y => 1080
-
-        Find the dimensions of your device in MainActivity ( DEBUG )
-
-        Add the android:background="@color/colorAlphaWhite" in layout ( RelativeLayout ) to help the adjusts
+    Landscape:
+    Device Width: X => 2712
+    Device Height: Y => 1220
     -->
 
     <!-- Board -->
-    <dimen name="boardWidth" tools:ignore="PxUsage">1620px</dimen>
-    <dimen name="boardHeight" tools:ignore="PxUsage">897px</dimen>
-    <dimen name="boardMarginBottom" tools:ignore="PxUsage">0.0099px</dimen>
+    <dimen name="boardWidth"
+        tools:ignore="PxUsage">2288px</dimen>
+
+    <dimen name="boardHeight"
+        tools:ignore="PxUsage">1013px</dimen>
+
+    <dimen name="boardMarginBottom"
+        tools:ignore="PxUsage">0px</dimen>
+
 
     <!-- Canvas -->
-    <dimen name="canvasWidth" tools:ignore="PxUsage">1458px</dimen>
-    <dimen name="canvasHeight" tools:ignore="PxUsage">731px</dimen>
-    <dimen name="canvasMarginTop" tools:ignore="PxUsage">82px</dimen>
+    <dimen name="canvasWidth"
+        tools:ignore="PxUsage">2059px</dimen>
+
+    <dimen name="canvasHeight"
+        tools:ignore="PxUsage">826px</dimen>
+
+    <dimen name="canvasMarginTop"
+        tools:ignore="PxUsage">93px</dimen>
+
 
     <!-- Buttons -->
-    <dimen name="buttonWidth" tools:ignore="PxUsage">280px</dimen>
-    <dimen name="buttonHeight" tools:ignore="PxUsage">75px</dimen>
-    <dimen name="buttonNormalMarginStart" tools:ignore="PxUsage">175px</dimen>
-    <dimen name="buttonCloseMarginEnd" tools:ignore="PxUsage">170px</dimen>
-    <dimen name="buttonTrickshotSecondLineMarginEnd" tools:ignore="PxUsage">170px</dimen>
+    <dimen name="buttonWidth"
+        tools:ignore="PxUsage">396px</dimen>
+
+    <dimen name="buttonHeight"
+        tools:ignore="PxUsage">85px</dimen>
+
+    <dimen name="buttonNormalMarginStart"
+        tools:ignore="PxUsage">247px</dimen>
+
+    <dimen name="buttonCloseMarginEnd"
+        tools:ignore="PxUsage">240px</dimen>
+
+    <dimen name="buttonTrickshotSecondLineMarginEnd"
+        tools:ignore="PxUsage">240px</dimen>
+
 </resources>
