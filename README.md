@@ -9,7 +9,7 @@ Use o Android Studio para importar o projeto e gerar o .apk
 
 > O hack é exibido na tela sempre que balançar/agitar o celular
 
-**Aviso:** Este projeto foi criado apenas para fins educacionais e de pesquisa. O autor não se responsabiliza por qualquer uso indevido, danos ou atividades ilegais decorrentes da utilização desta ferramenta. Utilize-a por sua própria conta e risco, e apenas em sistemas para os quais você tenha permissão explícita para realizar testes
+**Aviso:** Este projeto foi criado apenas para fins educacionais e de pesquisa. O autor não se responsabiliza por qualquer uso indevido, danos ou atividades ilegais decorrentes da utilização desta ferramenta. Utilize-a por sua própria conta e risco
 
 **Important**
 
@@ -22,7 +22,7 @@ You need to make changes to the *[dimens.xml](https://github.com/jonathansilva/P
 
 > The hack is displayed on the screen whenever you shake the phone
 
-**Disclaimer:** This project is created for educational and research purposes only. The author is not responsible for any misuse, damage, or illegal activities caused by the use of this tool. Use it at your own risk and only on systems you have explicit permission to test
+**Disclaimer:** This project is created for educational and research purposes only. The author is not responsible for any misuse, damage, or illegal activities caused by the use of this tool. Use it at your own risk
 
 ---
 
