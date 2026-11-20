@@ -26,4 +26,6 @@ You need to make changes to the *[dimens.xml](https://github.com/jonathansilva/P
 
 ---
 
-[Demo](https://www.youtube.com/watch?v=pH-uqXHBreI&list=PL1Z6DvZsu0GdBTJmiutGIktcVpQwFvaA0)
+| Normal | Trickshot |
+|----------|----------|
+| ![normal](normal.png) | ![trickshot](trickshot.png) |
